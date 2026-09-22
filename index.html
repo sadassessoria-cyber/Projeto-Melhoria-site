@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAD Assessoria Empresarial | Contabilidade Inteligente</title>
+<meta name="description" content="Contabilidade orientada por dados para empresas que querem crescer. Departamento Pessoal, Contábil, Fiscal e Legalização em um só lugar.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true">
+          <defs>
+            <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f3d38a"/>
+              <stop offset="100%" stop-color="#c9973f"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="46" height="46" rx="14" fill="#0b1220" stroke="url(#markGrad)" stroke-width="1.5"/>
+          <path d="M24 12c-3.5 0-6 2-6 5 0 6 12 4 12 10 0 3-3 5-6.5 5-3 0-5.5-1.3-6.8-3.4" fill="none" stroke="url(#markGrad)" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="24" y1="8" x2="24" y2="12" stroke="url(#markGrad)" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="24" y1="32" x2="24" y2="36" stroke="url(#markGrad)" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>SAD</strong>
+        <small>Assessoria Empresarial &amp; Contabilidade</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#servicos">Áreas de Atuação</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#sobre">Quem Somos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="#contato">Área Restrita</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/551124023899" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <canvas id="networkCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy" data-reveal>
+      <span class="eyebrow"><span class="dot"></span> Contabilidade orientada por dados</span>
+      <h1>Decisões financeiras mais <span class="text-gradient">inteligentes</span> para o seu negócio</h1>
+      <p class="hero-lead">Unimos know-how contábil com tecnologia para cuidar de pessoal, fiscal, contábil e legalização da sua empresa — com transparência, precisão e velocidade.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/551124023899" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+          Entre em contato hoje mesmo
+        </a>
+        <a href="#servicos" class="btn btn-ghost btn-lg">
+          Conhecer serviços
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong data-count="30" data-suffix="+">0</strong>
+          <span>Anos de mercado</span>
+        </div>
+        <div class="hero-stat">
+          <strong data-count="500" data-suffix="+">0</strong>
+          <span>Empresas atendidas</span>
+        </div>
+        <div class="hero-stat">
+          <strong data-count="4">0</strong>
+          <span>Departamentos especializados</span>
+        </div>
+        <div class="hero-stat">
+          <strong data-count="100" data-suffix="%">0</strong>
+          <span>Atendimento digital</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-reveal data-reveal-delay="150">
+      <div class="dash-card dash-card-main">
+        <div class="dash-head">
+          <span class="dash-tag">Painel Fiscal</span>
+          <span class="dash-live"><i></i> ao vivo</span>
+        </div>
+        <div class="dash-figure">
+          <span class="dash-figure-label">Economia tributária estimada</span>
+          <span class="dash-figure-value">R$ 128.400</span>
+          <span class="dash-figure-delta">▲ 18,4% este trimestre</span>
+        </div>
+        <svg class="dash-chart" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path class="chart-line" d="M0 70 L30 62 L60 68 L90 45 L120 50 L150 30 L180 38 L210 20 L240 26 L270 10 L300 16" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M0 70 L30 62 L60 68 L90 45 L120 50 L150 30 L180 38 L210 20 L240 26 L270 10 L300 16 L300 100 L0 100 Z" fill="url(#chartFill)" stroke="none"/>
+        </svg>
+        <div class="dash-bars">
+          <span style="--h:40%"></span><span style="--h:65%"></span><span style="--h:50%"></span>
+          <span style="--h:80%"></span><span style="--h:60%"></span><span style="--h:95%"></span>
+          <span style="--h:70%"></span>
+        </div>
+      </div>
+
+      <div class="dash-card dash-card-mini dash-mini-a">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f3d38a" stroke-width="2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Folha processada</strong><span>Departamento Pessoal</span></div>
+      </div>
+
+      <div class="dash-card dash-card-mini dash-mini-b">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M12 2v20M2 12h20" stroke-linecap="round"/></svg>
+        <div><strong>Obrigações em dia</strong><span>100% de conformidade</span></div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#servicos" class="scroll-cue" aria-label="Rolar para baixo">
+    <span></span>
+  </a>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<section class="trust-strip">
+  <div class="container trust-inner">
+    <div class="trust-badge">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f3d38a" stroke-width="2"><path d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8l3-6Z" stroke-linejoin="round"/></svg>
+      Referência Nacional — Melhores do Ano 2016
+    </div>
+    <span class="trust-sep"></span>
+    <div class="trust-badge">CRC SP-036030/O-9</div>
+    <span class="trust-sep"></span>
+    <div class="trust-badge">Suporte via WhatsApp em tempo real</div>
+    <span class="trust-sep"></span>
+    <div class="trust-badge">Gestão 100% digital</div>
+  </div>
+</section>
+
+<!-- ===== DIFERENCIAIS ===== -->
+<section class="section" id="diferenciais">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Por que a SAD</span>
+      <h2>Contabilidade que funciona como <span class="text-gradient">infraestrutura</span> do seu negócio</h2>
+      <p>Menos burocracia, mais visibilidade. Acompanhe sua empresa com processos claros e indicadores em tempo real.</p>
+    </div>
+
+    <div class="grid grid-4">
+      <article class="stat-card" data-reveal>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f3d38a" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        <strong data-count="30" data-suffix="+">0</strong>
+        <span>Anos de experiência no mercado contábil</span>
+      </article>
+      <article class="stat-card" data-reveal data-reveal-delay="80">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <strong data-count="500" data-suffix="+">0</strong>
+        <span>Empresas atendidas em diversos segmentos</span>
+      </article>
+      <article class="stat-card" data-reveal data-reveal-delay="160">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f3d38a" stroke-width="1.8"><path d="M4 4v16h16"/><path d="M8 15l3-4 3 3 5-6"/></svg>
+        <strong data-count="4">0</strong>
+        <span>Departamentos especializados sob um só teto</span>
+      </article>
+      <article class="stat-card" data-reveal data-reveal-delay="240">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <strong data-count="98" data-suffix="%">0</strong>
+        <span>Índice de satisfação dos nossos clientes</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section class="section section-alt" id="servicos">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Como podemos te ajudar</span>
+      <h2>Áreas de atuação</h2>
+      <p>Da folha de pagamento à legalização, cuidamos de cada camada da sua operação para que você foque em crescer.</p>
+    </div>
+
+    <div class="grid grid-4 services-grid">
+      <article class="service-card" data-reveal>
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c1-3.4 3.4-5.2 6.5-5.2s5.5 1.8 6.5 5.2"/><path d="M16.5 8.2a3 3 0 1 1 0 6"/><path d="M21.5 20c-.6-2.3-1.9-3.9-3.7-4.7"/></svg>
+        </div>
+        <span class="service-index">01</span>
+        <h3>Departamento de Pessoal</h3>
+        <p>Folha de pagamento, admissões, benefícios e encargos trabalhistas com prazos rigorosamente cumpridos.</p>
+      </article>
+
+      <article class="service-card" data-reveal data-reveal-delay="80">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>
+        </div>
+        <span class="service-index">02</span>
+        <h3>Departamento Contábil</h3>
+        <p>Contabilidade geral, demonstrativos financeiros e apuração de impostos com precisão e clareza.</p>
+      </article>
+
+      <article class="service-card" data-reveal data-reveal-delay="160">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <span class="service-index">03</span>
+        <h3>Departamento de Fiscalização</h3>
+        <p>Acompanhamento de compras, vendas, estoque e declaração de imposto de renda, sempre em conformidade.</p>
+      </article>
+
+      <article class="service-card" data-reveal data-reveal-delay="240">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+        </div>
+        <span class="service-index">04</span>
+        <h3>Departamento de Legalização</h3>
+        <p>Abertura, regularização e conformidade da sua empresa nas esferas Federal, Estadual e Municipal.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESSO ===== -->
+<section class="section" id="processo">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Como trabalhamos</span>
+      <h2>Um processo simples, transparente e acompanhado de perto</h2>
+    </div>
+
+    <div class="process-track">
+      <div class="process-line" aria-hidden="true"></div>
+      <div class="process-step" data-reveal>
+        <span class="process-num">1</span>
+        <h3>Diagnóstico</h3>
+        <p>Entendemos o momento da sua empresa e mapeamos as obrigações e oportunidades.</p>
+      </div>
+      <div class="process-step" data-reveal data-reveal-delay="100">
+        <span class="process-num">2</span>
+        <h3>Implantação</h3>
+        <p>Organizamos processos e sistemas para uma transição sem dor de cabeça.</p>
+      </div>
+      <div class="process-step" data-reveal data-reveal-delay="200">
+        <span class="process-num">3</span>
+        <h3>Gestão contínua</h3>
+        <p>Cuidamos da rotina fiscal, contábil e trabalhista com prazos sempre em dia.</p>
+      </div>
+      <div class="process-step" data-reveal data-reveal-delay="300">
+        <span class="process-num">4</span>
+        <h3>Relatórios &amp; insights</h3>
+        <p>Você acompanha indicadores claros para decidir com mais segurança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUEM SOMOS ===== -->
+<section class="section section-alt" id="sobre">
+  <div class="container about-grid">
+    <div class="about-copy" data-reveal>
+      <span class="section-tag">Quem somos</span>
+      <h2>Parceiros contábeis focados no seu crescimento</h2>
+      <p>Somos a <strong>Sad Assessoria Empresarial</strong>, uma equipe dedicada de profissionais contábeis e empresariais apaixonados por ajudar nossos clientes a alcançarem o sucesso. Com anos de experiência e compromisso inabalável com a excelência, estamos prontos para ser a sua parceira confiável em todas as etapas do seu negócio.</p>
+      <p>Acreditamos que cada empresa é única e, portanto, merece uma abordagem personalizada — feita sob medida, com tecnologia e proximidade.</p>
+
+      <div class="badge-award">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#f3d38a" stroke-width="1.6"><path d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8l3-6Z" stroke-linejoin="round"/></svg>
+        <div>
+          <strong>Empresa Referência Nacional</strong>
+          <span>Melhores do Ano — 2016</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-cards" data-reveal data-reveal-delay="120">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".5" fill="currentColor"/></svg>
+        </div>
+        <h3>Missão</h3>
+        <p>Fornecer soluções contábeis e empresariais personalizadas, adequadas às necessidades exclusivas de cada cliente.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Visão</h3>
+        <p>Tornar-nos referência em contabilidade, admirados por responsabilidade, desempenho e trabalho em equipe.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+        </div>
+        <h3>Valores</h3>
+        <p>Ética profissional, respeito ao cliente e ao colaborador, pontualidade e confiabilidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="container cta-inner" data-reveal>
+    <h2>Pronto para simplificar a contabilidade da sua empresa?</h2>
+    <p>Fale agora com nosso time e receba um diagnóstico gratuito.</p>
+    <a href="https://wa.me/551124023899" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+      Entre em contato conosco
+    </a>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section class="section" id="contato">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Fale conosco</span>
+      <h2>Entre em contato</h2>
+      <p>Estamos disponíveis pelos canais abaixo — respondemos rápido.</p>
+    </div>
+
+    <div class="grid grid-4 contact-grid" data-reveal>
+      <a class="contact-card" href="https://wa.me/551124023899" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg>
+        <div><strong>WhatsApp</strong><span>(11) 2402-3899</span></div>
+      </a>
+      <a class="contact-card" href="https://wa.me/551134355150" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg>
+        <div><strong>WhatsApp</strong><span>(11) 3435-5150</span></div>
+      </a>
+      <a class="contact-card" href="mailto:sadassessoria@gmail.com">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><strong>E-mail</strong><span>sadassessoria@gmail.com</span></div>
+      </a>
+      <a class="contact-card" href="https://instagram.com/sadassessoria" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        <div><strong>Instagram</strong><span>@sadassessoria</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+          <rect x="1" y="1" width="46" height="46" rx="14" fill="#0b1220" stroke="#c9973f" stroke-width="1.5"/>
+          <path d="M24 12c-3.5 0-6 2-6 5 0 6 12 4 12 10 0 3-3 5-6.5 5-3 0-5.5-1.3-6.8-3.4" fill="none" stroke="#c9973f" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <div>
+        <strong>SAD Assessoria Empresarial</strong>
+        <p>Sad Escritório Contábil Ltda. — CRC SP-036030/O-9</p>
+      </div>
+    </div>
+
+    <nav class="footer-links">
+      <a href="#servicos">Áreas de Atuação</a>
+      <a href="#sobre">Quem Somos</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <p class="footer-copy">&copy; <span id="year"></span> SAD Assessoria Empresarial. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>
