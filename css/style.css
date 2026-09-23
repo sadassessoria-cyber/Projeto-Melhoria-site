@@ -885,6 +885,37 @@ img, svg { display: block; max-width: 100%; }
 .faq-body { padding: 0 22px 20px; }
 .faq-body p { margin: 0; font-size: 0.92rem; }
 
+/* ===================== CTA CNPJ GRÁTIS ===================== */
+.cta-note { font-size: 0.76rem; color: var(--text-faint); margin: -30px 0 36px; max-width: 520px; }
+.cta-note.center { margin: 18px auto 0; text-align: center; }
+.gold-text { color: var(--gold); font-weight: 600; }
+.hero-checks strong { color: var(--gold); font-weight: 600; }
+.cta-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0c1040;
+  background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+.tab-panel .tabs-cta { margin-top: 32px; }
+.btn-glow { position: relative; }
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid rgba(243, 211, 138, 0.55);
+  animation: ctaPulse 2.4s var(--ease) infinite;
+  pointer-events: none;
+}
+@keyframes ctaPulse { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.12); } }
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; }
