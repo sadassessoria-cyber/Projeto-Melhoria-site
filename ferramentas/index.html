@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferramentas gratuitas | SAD Assessoria Empresarial</title>
+<meta name="description" content="Calculadoras e ferramentas gratuitas: CLT x PJ, Fator R, Reforma Tributária, consulta de CNAE e gerador de invoice. SAD Assessoria.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- Ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="rgba(243,211,138,0.14)"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#f3d38a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8l3-6Z"/></symbol>
+</svg>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="brand">
+      <img class="brand-logo" src="../assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+      <span class="brand-text">
+        <strong>Assessoria Empresarial</strong>
+        <small>Contabilidade</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html#servicos">Serviços</a>
+      <a href="../index.html#segmentos">Segmentos</a>
+      <a href="../index.html#como-funciona">Como funciona</a>
+      <a href="index.html" class="active" aria-current="page">Ferramentas</a>
+      <a href="../index.html#sobre">Quem Somos</a>
+      <a href="../index.html#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="../index.html#contato">Área Restrita</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/551124023899" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+        <span class="btn-label">Falar no WhatsApp</span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ===== TOPO DA PÁGINA ===== -->
+<section class="page-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Você está em"><a href="../index.html">Início</a> <span aria-hidden="true">/</span> <span>Ferramentas</span></nav>
+    <h1>Ferramentas <span class="text-gradient">gratuitas</span> para a sua empresa</h1>
+    <p class="hero-lead">Simule impostos, compare regimes e resolva tarefas do dia a dia em poucos cliques — sem cadastro e direto no navegador.</p>
+  </div>
+</section>
+
+<section class="tool-section">
+  <div class="container">
+    <div class="tools-grid">
+      <a class="tool-link" href="calculadora-clt-pj.html" data-reveal data-reveal-delay="0">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M14 10h2M8 14h2M14 14h2M8 18h2M14 18h2"/></svg></div>
+        <h3>Calculadora CLT x PJ</h3>
+        <p>Compare salário CLT com faturamento PJ, incluindo 13º, férias, FGTS, impostos e benefícios.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="calculadora-fator-r.html" data-reveal data-reveal-delay="70">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 20 4"/><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/></svg></div>
+        <h3>Calculadora Fator R</h3>
+        <p>Descubra se sua empresa pode sair do Anexo V para o Anexo III do Simples e pagar menos imposto.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="calculadora-reforma-tributaria.html" data-reveal data-reveal-delay="140">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 7h18M6 7l-3 7a3 3 0 0 0 6 0L6 7ZM18 7l-3 7a3 3 0 0 0 6 0l-3-7ZM8 21h8"/></svg></div>
+        <h3>Calculadora da Reforma Tributária</h3>
+        <p>Simule como a troca de PIS, Cofins, ICMS e ISS por CBS e IBS pode impactar o seu negócio.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="consulta-cnae.html" data-reveal data-reveal-delay="210">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+        <h3>Consulta de CNAE</h3>
+        <p>Busque entre todos os 1.332 códigos oficiais do IBGE por atividade, palavra-chave ou número.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="gerador-de-invoice.html" data-reveal data-reveal-delay="280">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h7M9 17h5"/></svg></div>
+        <h3>Gerador de Invoice</h3>
+        <p>Crie faturas para clientes no exterior em dólar, euro ou libra e baixe em PDF gratuitamente.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container cta-inner" data-reveal>
+    <h2>Precisa de ajuda para interpretar os resultados?</h2>
+    <p>Nossos contadores analisam o seu caso e indicam o caminho com menos impostos e mais segurança.</p>
+    <a href="https://wa.me/551124023899" target="_blank" rel="noopener" class="btn btn-primary btn-lg"><svg width="18" height="18"><use href="#i-wa"/></svg> Falar com um especialista</a>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <img class="brand-logo footer-logo" src="../assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+          <div>
+            <strong>Assessoria Empresarial</strong>
+            <p>Contabilidade</p>
+          </div>
+        </div>
+        <p class="footer-about">Contabilidade orientada por dados para empresas que querem crescer. Mais praticidade, transparência e confiança para quem empreende.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener" aria-label="Instagram da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="WhatsApp da SAD"><svg width="18" height="18"><use href="#i-wa"/></svg></a>
+          <a href="mailto:sadassessoria@gmail.com" aria-label="E-mail da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Institucional">
+        <h4>A SAD</h4>
+        <a href="../index.html#sobre">Quem Somos</a>
+        <a href="../index.html#diferenciais">Diferenciais</a>
+        <a href="../index.html#equipe">Nosso time</a>
+        <a href="../index.html#depoimentos">Depoimentos</a>
+        <a href="../index.html#duvidas">Perguntas frequentes</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Serviços">
+        <h4>Serviços</h4>
+        <a href="../index.html#como-funciona" data-open-tab="abrir">Abrir empresa</a>
+        <a href="../index.html#como-funciona" data-open-tab="trocar">Trocar de contador</a>
+        <a href="../index.html#como-funciona" data-open-tab="mei">Migrar de MEI para ME</a>
+        <a href="../index.html#servicos">Áreas de atuação</a>
+        <a href="../index.html#segmentos">Segmentos atendidos</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="consulta-cnae.html">Consulta de CNAE</a>
+        <a href="gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="ferramentas/calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="ferramentas/calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="ferramentas/calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="ferramentas/consulta-cnae.html">Consulta de CNAE</a>
+        <a href="ferramentas/gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/551124023899" target="_blank" rel="noopener">(11) 2402-3899</a>
+        <a href="https://wa.me/551134355150" target="_blank" rel="noopener">(11) 3435-5150</a>
+        <a href="mailto:sadassessoria@gmail.com">sadassessoria@gmail.com</a>
+        <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener">@sadassessoria</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Sad Escritório Contábil Ltda. — CRC SP-036030/O-9</p>
+      <p class="footer-copy">&copy; <span id="year"></span> SAD Assessoria Empresarial. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+</a>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

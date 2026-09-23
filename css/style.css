@@ -556,7 +556,7 @@ img, svg { display: block; max-width: 100%; }
 .site-footer { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 70px 0 34px; }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1.1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.1fr;
   gap: 40px;
   padding-bottom: 40px;
 }

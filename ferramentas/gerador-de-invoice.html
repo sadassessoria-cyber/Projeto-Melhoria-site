@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Invoice | SAD Assessoria Empresarial</title>
+<meta name="description" content="Gerador de invoice gratuito para clientes no exterior: dólar, euro ou libra, com PDF pronto para enviar. Ferramenta da SAD Assessoria.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- Ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="rgba(243,211,138,0.14)"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#f3d38a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8l3-6Z"/></symbol>
+</svg>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="brand">
+      <img class="brand-logo" src="../assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+      <span class="brand-text">
+        <strong>Assessoria Empresarial</strong>
+        <small>Contabilidade</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html#servicos">Serviços</a>
+      <a href="../index.html#segmentos">Segmentos</a>
+      <a href="../index.html#como-funciona">Como funciona</a>
+      <a href="index.html" class="active" aria-current="page">Ferramentas</a>
+      <a href="../index.html#sobre">Quem Somos</a>
+      <a href="../index.html#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="../index.html#contato">Área Restrita</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/551124023899" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+        <span class="btn-label">Falar no WhatsApp</span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ===== TOPO DA PÁGINA ===== -->
+<section class="page-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Você está em"><a href="../index.html">Início</a> <span aria-hidden="true">/</span> <a href="index.html">Ferramentas</a> <span aria-hidden="true">/</span> <span>Gerador de Invoice</span></nav>
+    <h1>Gerador de Invoice <span class="text-gradient">100% online e gratuito</span></h1>
+    <p class="hero-lead">Emita faturas para clientes no exterior com praticidade e segurança. Crie invoices internacionais em poucos passos e baixe em PDF.</p>
+  </div>
+</section>
+
+<section class="tool-section" id="emitir">
+  <div class="container">
+    <div class="tool-card">
+      <h2>Emita sua invoice</h2>
+      <p>Preencha os dados e acompanhe a pré-visualização ao lado. Tudo fica no seu navegador — nenhuma informação é enviada para a SAD.</p>
+
+      <div class="invoice-layout">
+        <form class="inv-form" id="invForm" novalidate>
+          <fieldset>
+            <legend>1. Dados da fatura</legend>
+            <div class="tool-grid">
+              <label class="field"><span>Número*</span><input type="text" name="numero" placeholder="0001"></label>
+              <label class="field"><span>Data de emissão*</span><input type="date" name="emissao" placeholder=""></label>
+              <label class="field"><span>Vencimento</span><input type="date" name="vencimento" placeholder=""></label>
+              <label class="field"><span>Moeda*</span><select name="moeda">
+                <option value="USD">Dólar (USD)</option><option value="EUR">Euro (EUR)</option><option value="GBP">Libra (GBP)</option><option value="CAD">Dólar canadense (CAD)</option><option value="AUD">Dólar australiano (AUD)</option><option value="CHF">Franco suíço (CHF)</option><option value="JPY">Iene (JPY)</option><option value="BRL">Real (BRL)</option>
+              </select></label>
+              <label class="field"><span>Idioma da invoice</span><select name="idioma"><option value="en">Inglês</option><option value="es">Espanhol</option><option value="pt">Português</option></select></label>
+              <label class="field"><span>Incoterm (se houver)</span><select name="incoterm"><option value="">Não se aplica (serviços)</option><option>EXW</option><option>FCA</option><option>FOB</option><option>CFR</option><option>CIF</option><option>CPT</option><option>CIP</option><option>DAP</option><option>DPU</option><option>DDP</option></select></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Emissor (sua empresa)</legend>
+            <div class="tool-grid cols-2">
+              <label class="field full"><span>Razão social / nome*</span><input type="text" name="emNome" placeholder="Sua Empresa Ltda."></label>
+              <label class="field"><span>CNPJ</span><input type="text" name="emDoc" placeholder="00.000.000/0001-00"></label>
+              <label class="field"><span>E-mail</span><input type="email" name="emEmail" placeholder="contato@suaempresa.com"></label>
+              <label class="field full"><span>Endereço</span><input type="text" name="emEndereco" placeholder="Rua, número, bairro"></label>
+              <label class="field"><span>Cidade / Estado / CEP</span><input type="text" name="emCidade" placeholder="São Paulo - SP, 00000-000"></label>
+              <label class="field"><span>País</span><input type="text" name="emPais" placeholder="Brazil"></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Cliente no exterior</legend>
+            <div class="tool-grid cols-2">
+              <label class="field full"><span>Nome / empresa*</span><input type="text" name="clNome" placeholder="Client Inc."></label>
+              <label class="field"><span>Tax ID (opcional)</span><input type="text" name="clDoc" placeholder="EIN, VAT…"></label>
+              <label class="field"><span>E-mail</span><input type="email" name="clEmail" placeholder="billing@client.com"></label>
+              <label class="field full"><span>Endereço</span><input type="text" name="clEndereco" placeholder="Street, number, suite"></label>
+              <label class="field"><span>Cidade / Estado / CEP</span><input type="text" name="clCidade" placeholder="Austin, TX 78701"></label>
+              <label class="field"><span>País*</span><input type="text" name="clPais" placeholder="United States"></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Serviços ou produtos</legend>
+            <div class="items-table" id="invItems"></div>
+            <button type="button" class="btn btn-ghost btn-sm" id="invAdd" style="margin-top:12px">+ Adicionar item</button>
+            <div class="tool-grid cols-2" style="margin-top:16px">
+              <label class="field"><span>Desconto</span><input type="text" name="desconto" placeholder="0,00"></label>
+              <label class="field"><span>Local da prestação / envio</span><input type="text" name="local" placeholder="Remote — Brazil"></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>5. Pagamento e observações</legend>
+            <div class="tool-grid cols-2">
+              <label class="field full"><span>Instruções de pagamento</span><textarea name="pagamento" rows="3" placeholder="Beneficiary, bank, SWIFT/BIC, IBAN or account number, payment link…"></textarea></label>
+              <label class="field full"><span>Observações</span><textarea name="obs" rows="3" placeholder="Payment terms, contract reference, thank-you note…"></textarea></label>
+            </div>
+          </fieldset>
+
+          <p class="form-error" id="invError" role="alert" hidden>Preencha os campos obrigatórios (*) e pelo menos um item com valor.</p>
+          <div class="tool-actions">
+            <button type="button" class="btn btn-primary btn-lg" id="invPdf">Baixar PDF</button>
+            <button type="button" class="btn btn-ghost btn-lg" id="invSave">Salvar modelo</button>
+            <button type="button" class="btn btn-ghost btn-lg" id="invNew">Nova invoice</button>
+          </div>
+          <p class="disclaimer" id="invStatus" aria-live="polite"></p>
+        </form>
+
+        <div class="inv-preview-wrap">
+          <div class="invoice-paper" id="invPaper"></div>
+          <p>Pré-visualização. Em "Baixar PDF", escolha <strong>Salvar como PDF</strong> na janela de impressão.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Como funciona</span>
+      <h2>Emita sua cobrança para o exterior em 4 passos</h2>
+    </div>
+    <div class="steps">
+      <div class="step-card" data-reveal><span class="process-num">1</span><h3>Dados do emissor e do cliente</h3><p>Informe sua empresa e o cliente no exterior. Salve como modelo para reaproveitar nas próximas.</p></div>
+      <div class="step-card" data-reveal data-reveal-delay="80"><span class="process-num">2</span><h3>Serviços, valor e moeda</h3><p>Descreva o que foi prestado, a quantidade, o valor, a moeda e o prazo de pagamento.</p></div>
+      <div class="step-card" data-reveal data-reveal-delay="160"><span class="process-num">3</span><h3>Revise e gere o PDF</h3><p>A invoice é formatada automaticamente. Baixe em PDF e envie ao seu cliente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card" data-reveal><h3>O que é uma invoice?</h3><p>É o documento que comprova a venda de um produto ou a prestação de um serviço para um cliente fora do Brasil. Funciona como uma fatura internacional, com o detalhamento do serviço, do valor e das condições de pagamento.</p><p>Emitir corretamente evita atrasos no recebimento e problemas com a Receita Federal.</p></div>
+      <div class="info-card" data-reveal data-reveal-delay="80"><h3>Para quem é indicado</h3><ul><li>Prestadores de serviço e freelancers com clientes no exterior;</li><li>Agências, consultorias e startups que vendem para fora;</li><li>Profissionais que recebem em moeda estrangeira;</li><li>Empresas que exportam serviços digitais.</li></ul></div>
+      <div class="info-card" data-reveal><h3>O que deve constar</h3><ul><li>Número e data do documento;</li><li>Dados do emissor e do destinatário;</li><li>Descrição, quantidade, valor unitário e total;</li><li>Moeda, vencimento e forma de pagamento;</li><li>Incoterm e local de prestação ou envio, quando aplicável;</li><li>Assinatura do emissor.</li></ul></div>
+      <div class="info-card" data-reveal data-reveal-delay="80"><h3>Exportação de serviços e impostos</h3><p>Serviços exportados podem ter isenção de ISS, PIS e Cofins quando o resultado se verifica no exterior. Além da invoice, é preciso emitir nota fiscal de exportação e registrar o câmbio corretamente — a SAD orienta todo esse processo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="duvidas">
+  <div class="container faq-wrap">
+    <div class="section-head left" data-reveal>
+      <span class="section-tag">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq-list" data-reveal>
+      <details class="faq-item" open><summary>O gerador de invoice é gratuito?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Sim. Você pode criar, baixar e enviar suas invoices sem custo e sem cadastro.</p></div></details>
+      <details class="faq-item"><summary>Meus dados ficam salvos?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Só no seu próprio navegador, e apenas se você clicar em "Salvar modelo". Nada é enviado para a SAD ou para terceiros.</p></div></details>
+      <details class="faq-item"><summary>Preciso ter empresa para emitir uma invoice?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Para faturar como empresa e aproveitar os benefícios da exportação de serviços, sim: é necessário um CNPJ ativo. Se ainda não tem, a SAD abre a sua empresa.</p></div></details>
+      <details class="faq-item"><summary>A invoice substitui a nota fiscal?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Não. A invoice é o documento comercial enviado ao cliente. No Brasil, a empresa também precisa emitir a nota fiscal de exportação correspondente.</p></div></details>
+      <details class="faq-item"><summary>Posso emitir em qualquer moeda?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Sim. O gerador aceita dólar, euro, libra e outras moedas, além do real.</p></div></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <img class="brand-logo footer-logo" src="../assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+          <div>
+            <strong>Assessoria Empresarial</strong>
+            <p>Contabilidade</p>
+          </div>
+        </div>
+        <p class="footer-about">Contabilidade orientada por dados para empresas que querem crescer. Mais praticidade, transparência e confiança para quem empreende.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener" aria-label="Instagram da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="WhatsApp da SAD"><svg width="18" height="18"><use href="#i-wa"/></svg></a>
+          <a href="mailto:sadassessoria@gmail.com" aria-label="E-mail da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Institucional">
+        <h4>A SAD</h4>
+        <a href="../index.html#sobre">Quem Somos</a>
+        <a href="../index.html#diferenciais">Diferenciais</a>
+        <a href="../index.html#equipe">Nosso time</a>
+        <a href="../index.html#depoimentos">Depoimentos</a>
+        <a href="../index.html#duvidas">Perguntas frequentes</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Serviços">
+        <h4>Serviços</h4>
+        <a href="../index.html#como-funciona" data-open-tab="abrir">Abrir empresa</a>
+        <a href="../index.html#como-funciona" data-open-tab="trocar">Trocar de contador</a>
+        <a href="../index.html#como-funciona" data-open-tab="mei">Migrar de MEI para ME</a>
+        <a href="../index.html#servicos">Áreas de atuação</a>
+        <a href="../index.html#segmentos">Segmentos atendidos</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="consulta-cnae.html">Consulta de CNAE</a>
+        <a href="gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="ferramentas/calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="ferramentas/calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="ferramentas/calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="ferramentas/consulta-cnae.html">Consulta de CNAE</a>
+        <a href="ferramentas/gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/551124023899" target="_blank" rel="noopener">(11) 2402-3899</a>
+        <a href="https://wa.me/551134355150" target="_blank" rel="noopener">(11) 3435-5150</a>
+        <a href="mailto:sadassessoria@gmail.com">sadassessoria@gmail.com</a>
+        <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener">@sadassessoria</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Sad Escritório Contábil Ltda. — CRC SP-036030/O-9</p>
+      <p class="footer-copy">&copy; <span id="year"></span> SAD Assessoria Empresarial. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+</a>
+
+<script src="../js/main.js"></script>
+<script src="../js/tools/invoice.js"></script>
+</body>
+</html>

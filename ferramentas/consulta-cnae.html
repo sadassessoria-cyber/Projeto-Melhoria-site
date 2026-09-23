@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulta de CNAE | SAD Assessoria Empresarial</title>
+<meta name="description" content="Consulte gratuitamente todos os códigos CNAE oficiais do IBGE por atividade, palavra-chave ou número. Ferramenta da SAD Assessoria.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- Ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="rgba(243,211,138,0.14)"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#f3d38a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8l3-6Z"/></symbol>
+</svg>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="brand">
+      <img class="brand-logo" src="../assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+      <span class="brand-text">
+        <strong>Assessoria Empresarial</strong>
+        <small>Contabilidade</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html#servicos">Serviços</a>
+      <a href="../index.html#segmentos">Segmentos</a>
+      <a href="../index.html#como-funciona">Como funciona</a>
+      <a href="index.html" class="active" aria-current="page">Ferramentas</a>
+      <a href="../index.html#sobre">Quem Somos</a>
+      <a href="../index.html#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="../index.html#contato">Área Restrita</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/551124023899" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+        <span class="btn-label">Falar no WhatsApp</span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ===== TOPO DA PÁGINA ===== -->
+<section class="page-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Você está em"><a href="../index.html">Início</a> <span aria-hidden="true">/</span> <a href="index.html">Ferramentas</a> <span aria-hidden="true">/</span> <span>Consulta de CNAE</span></nav>
+    <h1>Consulta de <span class="text-gradient">CNAE</span></h1>
+    <p class="hero-lead">Encontre o código de atividade certo para abrir ou regularizar a sua empresa — com a base oficial completa do IBGE.</p>
+  </div>
+</section>
+
+<section class="tool-section">
+  <div class="container">
+    <div class="tool-card">
+      <h2>Qual a CNAE da sua empresa?</h2>
+      <p>Digite a atividade, uma palavra-chave ou o código. A busca considera os 1.332 códigos oficiais da CNAE 2.3 e todas as atividades que cada um compreende.</p>
+      <div class="search-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="cnaeQuery" placeholder="Ex.: dentista, desenvolvimento de software, 6201-5/01…" autocomplete="off" aria-label="Buscar CNAE por atividade ou código">
+      </div>
+      <p style="margin:18px 0 0;font-size:.86rem">Principais categorias:</p>
+      <div class="chips" id="cnaeChips">
+          <button type="button" class="chip" data-q="consultoria">Consultoria</button>
+          <button type="button" class="chip" data-q="software">Software</button>
+          <button type="button" class="chip" data-q="ensino">Educação e cursos</button>
+          <button type="button" class="chip" data-q="apoio administrativo">Administrativo</button>
+          <button type="button" class="chip" data-q="advocacia">Advocacia</button>
+          <button type="button" class="chip" data-q="engenharia">Engenharia</button>
+          <button type="button" class="chip" data-q="tecnologia da informação">Tecnologia</button>
+          <button type="button" class="chip" data-q="médica">Serviços médicos</button>
+          <button type="button" class="chip" data-q="odontológica">Odontologia</button>
+          <button type="button" class="chip" data-q="psicologia">Psicologia</button>
+          <button type="button" class="chip" data-q="publicidade">Publicidade</button>
+          <button type="button" class="chip" data-q="turismo">Turismo</button>
+          <button type="button" class="chip" data-q="arquitetura">Arquitetura</button>
+          <button type="button" class="chip" data-q="corretagem imóveis">Corretagem de imóveis</button>
+          <button type="button" class="chip" data-q="comércio varejista">Comércio varejista</button>
+          <button type="button" class="chip" data-q="internet">E-commerce</button>
+      </div>
+      <p class="cnae-meta" id="cnaeMeta" aria-live="polite">Carregando a base de CNAEs…</p>
+      <div class="cnae-list" id="cnaeList"></div>
+      <div class="load-more"><button type="button" class="btn btn-ghost btn-sm" id="cnaeMore" hidden>Mostrar mais resultados</button></div>
+      <p class="disclaimer">Fonte: IBGE/CONCLA — Classificação Nacional de Atividades Econômicas (CNAE 2.3). Esta ferramenta ajuda a encontrar a atividade mais adequada, mas não dispensa a análise de um contador: o anexo do Simples Nacional, o Fator R e a permissão para MEI dependem de cada caso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Entenda</span>
+      <h2>O que é a consulta de CNAE?</h2>
+      <p>É o processo de identificar o código ideal para a sua empresa. A CNAE é usada na abertura do CNPJ e define quais atividades a empresa pode exercer e quais impostos vai pagar.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card" data-reveal><h3>Quando consultar</h3><p>Sempre que for abrir uma empresa, mudar ou incluir atividades, ou revisar o enquadramento tributário. A CNAE certa mantém a empresa em conformidade e ajuda a aproveitar benefícios fiscais.</p></div>
+      <div class="info-card" data-reveal data-reveal-delay="80"><h3>Como usar a ferramenta</h3><p>Digite o nome da atividade ou o código. Abra o resultado para ver as atividades que ele compreende e compare as opções mais compatíveis com o seu negócio.</p></div>
+      <div class="info-card" data-reveal><h3>Depois de encontrar a CNAE</h3><p>O próximo passo é abrir o CNPJ com o enquadramento tributário correto. A SAD valida a escolha, verifica o anexo do Simples e cuida de toda a abertura para você.</p></div>
+      <div class="info-card" data-reveal data-reveal-delay="80"><h3>Atenção</h3><p>Uma CNAE incorreta pode gerar impostos maiores, autuações e até impedir licitações e financiamentos. Na dúvida, fale com um contador antes de registrar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="duvidas">
+  <div class="container faq-wrap">
+    <div class="section-head left" data-reveal>
+      <span class="section-tag">Dúvidas</span>
+      <h2>Dúvidas comuns sobre a escolha da CNAE</h2>
+    </div>
+    <div class="faq-list" data-reveal>
+      <details class="faq-item" open><summary>O que é a CNAE e por que é importante?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>A CNAE (Classificação Nacional de Atividades Econômicas) é o código que identifica a atividade da empresa. Ela é essencial para o enquadramento tributário correto e para evitar problemas com o fisco.</p></div></details>
+      <details class="faq-item"><summary>Posso ter mais de uma CNAE?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Sim. A empresa tem uma CNAE principal e pode ter várias secundárias, desde que correspondam a atividades realmente exercidas.</p></div></details>
+      <details class="faq-item"><summary>A CNAE influencia nos impostos?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Sim. Ela define o anexo do Simples Nacional, se a atividade está sujeita ao Fator R, a alíquota do ISS ou ICMS e até se a empresa pode ser MEI.</p></div></details>
+      <details class="faq-item"><summary>Posso alterar a CNAE depois?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Sim, por meio de uma alteração contratual e cadastral nos órgãos competentes. A SAD cuida desse processo para você.</p></div></details>
+      <details class="faq-item"><summary>Quais critérios considerar na escolha?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>A atividade que gera a maior parte da receita, os serviços oferecidos, os planos de crescimento e o impacto tributário de cada opção.</p></div></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <img class="brand-logo footer-logo" src="../assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+          <div>
+            <strong>Assessoria Empresarial</strong>
+            <p>Contabilidade</p>
+          </div>
+        </div>
+        <p class="footer-about">Contabilidade orientada por dados para empresas que querem crescer. Mais praticidade, transparência e confiança para quem empreende.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener" aria-label="Instagram da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="WhatsApp da SAD"><svg width="18" height="18"><use href="#i-wa"/></svg></a>
+          <a href="mailto:sadassessoria@gmail.com" aria-label="E-mail da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Institucional">
+        <h4>A SAD</h4>
+        <a href="../index.html#sobre">Quem Somos</a>
+        <a href="../index.html#diferenciais">Diferenciais</a>
+        <a href="../index.html#equipe">Nosso time</a>
+        <a href="../index.html#depoimentos">Depoimentos</a>
+        <a href="../index.html#duvidas">Perguntas frequentes</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Serviços">
+        <h4>Serviços</h4>
+        <a href="../index.html#como-funciona" data-open-tab="abrir">Abrir empresa</a>
+        <a href="../index.html#como-funciona" data-open-tab="trocar">Trocar de contador</a>
+        <a href="../index.html#como-funciona" data-open-tab="mei">Migrar de MEI para ME</a>
+        <a href="../index.html#servicos">Áreas de atuação</a>
+        <a href="../index.html#segmentos">Segmentos atendidos</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="consulta-cnae.html">Consulta de CNAE</a>
+        <a href="gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="ferramentas/calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="ferramentas/calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="ferramentas/calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="ferramentas/consulta-cnae.html">Consulta de CNAE</a>
+        <a href="ferramentas/gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/551124023899" target="_blank" rel="noopener">(11) 2402-3899</a>
+        <a href="https://wa.me/551134355150" target="_blank" rel="noopener">(11) 3435-5150</a>
+        <a href="mailto:sadassessoria@gmail.com">sadassessoria@gmail.com</a>
+        <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener">@sadassessoria</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Sad Escritório Contábil Ltda. — CRC SP-036030/O-9</p>
+      <p class="footer-copy">&copy; <span id="year"></span> SAD Assessoria Empresarial. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+</a>
+
+<script src="../js/main.js"></script>
+<script src="dados/cnae.js" defer></script>
+<script src="../js/tools/cnae.js" defer></script>
+</body>
+</html>
