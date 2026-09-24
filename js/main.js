@@ -92,49 +92,35 @@
     counters.forEach(animateCounter);
   }
 
-  /* ---------- Avaliações do Google (Maps JavaScript API + Places) ---------- */
+  /* ---------- Avaliações do Google (conteúdo em js/avaliacoes.js) ---------- */
   var reviewsSection = document.getElementById("avaliacoes");
-  var placeId = reviewsSection && reviewsSection.getAttribute("data-place-id").trim();
-  var mapsKey = reviewsSection && reviewsSection.getAttribute("data-api-key").trim();
+  var reviewsData = window.SAD_AVALIACOES || {};
+  var reviews = (reviewsData.avaliacoes || []).filter(function (r) { return r.texto; });
 
-  function loadGoogleMaps(key) {
-    return new Promise(function (resolve, reject) {
-      window.__sadMapsReady = resolve;
-      // Chamado pelo Google quando a chave é inválida ou o domínio não está autorizado
-      window.gm_authFailure = function () { reject(new Error("Chave do Google Maps recusada")); };
-      var script = document.createElement("script");
-      script.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(key) +
-        "&v=weekly&loading=async&language=pt-BR&callback=__sadMapsReady";
-      script.async = true;
-      script.onerror = reject;
-      document.head.appendChild(script);
-    });
-  }
-
-  function renderReviews(place) {
-    var reviews = (place.reviews || []).filter(function (r) { return r.text; });
-    if (!place.rating || !reviews.length) return false;
-
-    var mapsUrl = place.googleMapsURI || "https://www.google.com/maps/place/?q=place_id:" + placeId;
-    document.getElementById("reviewsRating").textContent = place.rating.toFixed(1).replace(".", ",");
-    document.getElementById("reviewsStars").style.setProperty("--rating", place.rating);
-    var count = document.getElementById("reviewsCount");
-    count.textContent = place.userRatingCount + " avaliações no Google";
-    count.href = mapsUrl;
-    document.getElementById("reviewsWrite").href =
-      "https://search.google.com/local/writereview?placeid=" + encodeURIComponent(placeId);
+  if (reviewsSection && reviews.length) {
+    if (reviewsData.nota) {
+      document.getElementById("reviewsRating").textContent = Number(reviewsData.nota).toFixed(1).replace(".", ",");
+      document.getElementById("reviewsStars").style.setProperty("--rating", reviewsData.nota);
+    }
+    if (reviewsData.total) {
+      document.getElementById("reviewsCount").textContent = reviewsData.total + " avaliações no Google";
+    }
+    if (reviewsData.perfilGoogle) {
+      var reviewsLink = document.getElementById("reviewsLink");
+      reviewsLink.href = reviewsData.perfilGoogle;
+      reviewsLink.hidden = false;
+    }
 
     var track = document.getElementById("reviewsTrack");
     reviews.forEach(function (review) {
-      var author = review.authorAttribution || {};
-      var name = author.displayName || "Cliente Google";
+      var name = review.nome || "Cliente Google";
 
       var card = document.createElement("article");
       card.className = "review-card";
 
       var text = document.createElement("p");
       text.className = "review-text";
-      text.textContent = "\u201C" + review.text.trim() + "\u201D";
+      text.textContent = "\u201C" + review.texto.trim() + "\u201D";
       card.appendChild(text);
 
       var more = document.createElement("button");
@@ -152,9 +138,9 @@
       footer.className = "review-author";
 
       var avatar;
-      if (author.photoURI) {
+      if (review.foto) {
         avatar = document.createElement("img");
-        avatar.src = author.photoURI;
+        avatar.src = review.foto;
         avatar.alt = "";
         avatar.loading = "lazy";
         avatar.referrerPolicy = "no-referrer";
@@ -168,26 +154,17 @@
       var info = document.createElement("div");
       var nameEl = document.createElement("strong");
       nameEl.textContent = name;
-      if (author.uri) {
-        var link = document.createElement("a");
-        link.href = author.uri;
-        link.target = "_blank";
-        link.rel = "noopener";
-        link.appendChild(nameEl);
-        info.appendChild(link);
-      } else {
-        info.appendChild(nameEl);
-      }
+      info.appendChild(nameEl);
       var meta = document.createElement("div");
       meta.className = "review-meta";
       var stars = document.createElement("span");
       stars.className = "stars stars-sm";
-      stars.style.setProperty("--rating", review.rating || 0);
-      stars.setAttribute("aria-label", (review.rating || 0) + " de 5 estrelas");
+      stars.style.setProperty("--rating", review.estrelas || 5);
+      stars.setAttribute("aria-label", (review.estrelas || 5) + " de 5 estrelas");
       meta.appendChild(stars);
-      if (review.relativePublishTimeDescription) {
+      if (review.quando) {
         var when = document.createElement("span");
-        when.textContent = review.relativePublishTimeDescription;
+        when.textContent = review.quando;
         meta.appendChild(when);
       }
       info.appendChild(meta);
@@ -220,39 +197,6 @@
     track.addEventListener("scroll", updateArrows, { passive: true });
     window.addEventListener("resize", updateArrows);
     updateArrows();
-    return true;
-  }
-
-  function fetchReviews() {
-    loadGoogleMaps(mapsKey)
-      .then(function () { return google.maps.importLibrary("places"); })
-      .then(function (places) {
-        var place = new places.Place({ id: placeId, requestedLanguage: "pt-BR" });
-        return place.fetchFields({
-          fields: ["rating", "userRatingCount", "reviews", "googleMapsURI"]
-        }).then(function () { return place; });
-      })
-      .then(renderReviews)
-      .catch(function (err) {
-        // Em caso de erro a seção continua oculta; o resto do site segue normal
-        if (window.console) console.warn("Avaliações do Google indisponíveis:", err);
-      });
-  }
-
-  // Só consulta o Google quando o visitante se aproxima da seção (economiza cota da API)
-  if (placeId && mapsKey) {
-    var anchor = document.getElementById("sobre") || reviewsSection;
-    if ("IntersectionObserver" in window) {
-      var reviewsIo = new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) {
-          reviewsIo.disconnect();
-          fetchReviews();
-        }
-      }, { rootMargin: "400px 0px" });
-      reviewsIo.observe(anchor);
-    } else {
-      fetchReviews();
-    }
   }
 
   /* ---------- Hero particle network ---------- */

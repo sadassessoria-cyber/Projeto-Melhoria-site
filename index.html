@@ -328,13 +328,9 @@
 </section>
 
 <!-- ===== AVALIAÇÕES GOOGLE =====
-     Para ativar: preencha data-place-id (ID da empresa no Google Maps)
-     e data-api-key (chave do Google Cloud restrita ao domínio do site).
-     Enquanto estiverem vazios, a seção fica oculta. -->
-<section class="section reviews-section" id="avaliacoes"
-  data-place-id=""
-  data-api-key=""
-  hidden>
+     As avaliações ficam em js/avaliacoes.js. Enquanto a lista estiver vazia,
+     a seção fica oculta. -->
+<section class="section reviews-section" id="avaliacoes" hidden>
   <div class="container">
     <div class="section-head" data-reveal>
       <span class="section-tag">Avaliações</span>
@@ -348,8 +344,8 @@
         <strong id="reviewsRating">–</strong>
         <span class="stars" id="reviewsStars" style="--rating: 0"></span>
       </div>
-      <a class="reviews-count" id="reviewsCount" href="#" target="_blank" rel="noopener"></a>
-      <a class="btn btn-ghost btn-sm" id="reviewsWrite" href="#" target="_blank" rel="noopener">Avaliar no Google</a>
+      <span class="reviews-count" id="reviewsCount"></span>
+      <a class="btn btn-ghost btn-sm" id="reviewsLink" href="#" target="_blank" rel="noopener" hidden>Ver todas no Google</a>
     </div>
 
     <div class="reviews-carousel" data-reveal>
@@ -434,6 +430,7 @@
   <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
 </a>
 
+<script src="js/avaliacoes.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
