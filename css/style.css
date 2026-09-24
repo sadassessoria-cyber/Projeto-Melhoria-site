@@ -480,18 +480,32 @@ img, svg { display: block; max-width: 100%; }
 }
 .about-copy h2 { font-size: clamp(1.7rem, 2.8vw, 2.2rem); color: #fff; }
 
-.award-list { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
-.badge-award {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
+.awards {
+  margin-top: 28px;
+  padding: 20px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
 }
-.badge-award strong { display: block; color: #fff; font-size: 0.95rem; }
-.badge-award span { font-size: 0.8rem; color: var(--text-faint); }
+.awards-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.awards-head strong { color: #fff; font-size: 0.95rem; }
+.awards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.award-seal { margin: 0; text-align: center; }
+.award-seal a { display: block; border-radius: 8px; transition: transform .3s ease; }
+.award-seal a:hover { transform: translateY(-4px); }
+.award-seal img {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.35));
+}
+.award-seal figcaption { margin-top: 12px; }
+.award-seal figcaption strong { display: block; color: #f3d38a; font-size: 0.88rem; }
+.award-seal figcaption span { display: block; font-size: 0.76rem; color: var(--text-faint); line-height: 1.35; margin-top: 2px; }
+.awards-note { margin: 14px 0 0; font-size: 0.74rem; color: var(--text-faint); text-align: center; }
 
 .about-cards { display: flex; flex-direction: column; gap: 18px; }
 .value-card {
