@@ -92,6 +92,65 @@
     counters.forEach(animateCounter);
   }
 
+  /* ---------- Tabs (Como funciona) ---------- */
+  var tabBtns = Array.prototype.slice.call(document.querySelectorAll(".tab-btn"));
+  function activateTab(name, focus) {
+    tabBtns.forEach(function (btn) {
+      var isActive = btn.getAttribute("data-tab") === name;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+      btn.setAttribute("tabindex", isActive ? "0" : "-1");
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      panel.hidden = !isActive;
+      panel.classList.toggle("active", isActive);
+      if (isActive && focus) btn.focus();
+    });
+  }
+  tabBtns.forEach(function (btn, i) {
+    btn.addEventListener("click", function () { activateTab(btn.getAttribute("data-tab")); });
+    btn.addEventListener("keydown", function (e) {
+      var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!dir) return;
+      e.preventDefault();
+      var next = tabBtns[(i + dir + tabBtns.length) % tabBtns.length];
+      activateTab(next.getAttribute("data-tab"), true);
+    });
+  });
+  document.querySelectorAll("[data-open-tab]").forEach(function (link) {
+    link.addEventListener("click", function () { activateTab(link.getAttribute("data-open-tab")); });
+  });
+
+  /* ---------- Lead form -> WhatsApp ---------- */
+  var leadForm = document.getElementById("leadForm");
+  if (leadForm) {
+    var formError = document.getElementById("formError");
+    leadForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var valid = true;
+      leadForm.querySelectorAll("[required]").forEach(function (field) {
+        var ok = field.value.trim() !== "" && (field.type !== "email" || /\S+@\S+\.\S+/.test(field.value));
+        field.closest(".field").classList.toggle("invalid", !ok);
+        if (!ok) valid = false;
+      });
+      formError.hidden = valid;
+      if (!valid) return;
+
+      var f = leadForm.elements;
+      var lines = [
+        "Olá! Vim pelo site e gostaria de falar com um especialista.",
+        "",
+        "*Nome:* " + f.nome.value.trim(),
+        "*E-mail:* " + f.email.value.trim(),
+        "*Telefone:* " + f.telefone.value.trim(),
+        "*Cidade/UF:* " + f.cidade.value.trim() + " - " + f.estado.value,
+        "*Serviço:* " + f.servico.value,
+        "*Tipo de negócio:* " + f.negocio.value
+      ];
+      if (f.mensagem.value.trim()) lines.push("*Mensagem:* " + f.mensagem.value.trim());
+      window.open("https://wa.me/551124023899?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
+    });
+  }
+
   /* ---------- Hero particle network ---------- */
   var canvas = document.getElementById("networkCanvas");
   if (canvas && !prefersReducedMotion) {

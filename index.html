@@ -11,10 +11,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tools.css">
 </head>
 <body>
 
 <div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- Ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="rgba(243,211,138,0.14)"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#f3d38a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8l3-6Z"/></symbol>
+</svg>
 
 <!-- ===== HEADER ===== -->
 <header class="site-header" id="header">
@@ -28,17 +36,19 @@
     </a>
 
     <nav class="main-nav" id="mainNav">
-      <a href="#servicos">Áreas de Atuação</a>
-      <a href="#diferenciais">Diferenciais</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#segmentos">Segmentos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#ferramentas">Ferramentas</a>
       <a href="#sobre">Quem Somos</a>
       <a href="#contato">Contato</a>
     </nav>
 
     <div class="header-actions">
       <a class="btn btn-ghost btn-sm" href="#contato">Área Restrita</a>
-      <a class="btn btn-primary btn-sm" href="https://wa.me/551124023899" target="_blank" rel="noopener">
+      <a class="btn btn-primary btn-sm" href="https://wa.me/551124023899?text=Ol%C3%A1%21%20Quero%20abrir%20meu%20CNPJ%20gr%C3%A1tis%20com%20a%20SAD." target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
-        <span class="btn-label">Falar no WhatsApp</span>
+        <span class="btn-label">Abrir CNPJ grátis</span>
       </a>
     </div>
 
@@ -59,17 +69,24 @@
     <div class="hero-copy" data-reveal>
       <span class="eyebrow"><span class="dot"></span> Contabilidade orientada por dados</span>
       <h1>Decisões financeiras mais <span class="text-gradient">inteligentes</span> para o seu negócio</h1>
-      <p class="hero-lead">Unimos know-how contábil com tecnologia para cuidar de pessoal, fiscal, contábil e legalização da sua empresa — com transparência, precisão e velocidade.</p>
+      <p class="hero-lead">Unimos experiência contábil e tecnologia para cuidar de pessoal, fiscal, contábil e legalização da sua empresa — com transparência, precisão e velocidade.</p>
+      <ul class="hero-checks">
+        <li><svg width="18" height="18"><use href="#i-check"/></svg> <strong>Abertura de CNPJ grátis*</strong></li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg> Economia legal no pagamento de impostos</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg> Contadores especialistas à disposição</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg> Atendimento digital e humanizado</li>
+      </ul>
       <div class="hero-actions">
-        <a href="https://wa.me/551124023899" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
-          Entre em contato hoje mesmo
+        <a href="https://wa.me/551124023899?text=Ol%C3%A1%21%20Quero%20abrir%20meu%20CNPJ%20gr%C3%A1tis%20com%20a%20SAD." target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-glow">
+          <svg width="18" height="18"><use href="#i-wa"/></svg>
+          Abrir meu CNPJ grátis
         </a>
-        <a href="#servicos" class="btn btn-ghost btn-lg">
-          Conhecer serviços
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+        <a href="#como-funciona" class="btn btn-ghost btn-lg" data-open-tab="trocar">
+          Trocar de contador
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
+      <p class="cta-note">* Abertura sem cobrança de honorários mediante contratação da contabilidade mensal, com prazo mínimo de contrato. Taxas de órgãos públicos podem ser cobradas conforme o município. Consulte as condições pelo WhatsApp.</p>
 
       <div class="hero-stats">
         <div class="hero-stat">
@@ -183,6 +200,29 @@
         <span>Índice de satisfação dos nossos clientes</span>
       </article>
     </div>
+
+    <div class="grid grid-4 pillars" >
+      <article class="pillar" data-reveal>
+        <div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Praticidade</h3>
+        <p>Resolva tudo de forma digital, de onde você estiver, sem pilhas de papel.</p>
+      </article>
+      <article class="pillar" data-reveal data-reveal-delay="80">
+        <div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2" y="14" width="5" height="6" rx="1.5"/><rect x="17" y="14" width="5" height="6" rx="1.5"/></svg></div>
+        <h3>Especialista dedicado</h3>
+        <p>Um contador que conhece o seu negócio e acompanha a sua empresa de perto.</p>
+      </article>
+      <article class="pillar" data-reveal data-reveal-delay="160">
+        <div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Transparência</h3>
+        <p>Você sabe o que está sendo feito, quanto vai pagar e quando cada prazo vence.</p>
+      </article>
+      <article class="pillar" data-reveal data-reveal-delay="240">
+        <div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Segurança</h3>
+        <p>Escritório registrado no CRC SP-036030/O-9, com seus dados tratados com sigilo.</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -229,7 +269,171 @@
         </div>
         <span class="service-index">04</span>
         <h3>Departamento de Legalização</h3>
-        <p>Abertura, regularização e conformidade da sua empresa nas esferas Federal, Estadual e Municipal.</p>
+        <p><strong class="gold-text">Abertura de CNPJ grátis*</strong>, regularização e conformidade da sua empresa nas esferas Federal, Estadual e Municipal.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEGMENTOS ===== -->
+<section class="section" id="segmentos">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Para quem atendemos</span>
+      <h2>Contabilidade para cada setor, <span class="text-gradient">do jeito certo</span></h2>
+      <p>Cada área tem suas regras, impostos e oportunidades. Nossos especialistas conhecem as particularidades do seu segmento para o seu negócio crescer sem complicação.</p>
+    </div>
+
+    <div class="segments-grid">
+      <article class="segment-card" data-reveal>
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/><path d="M8 11h2l1-2 2 4 1-2h2"/></svg></div>
+        <h3>Saúde</h3>
+        <p>Médicos, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas.</p>
+      </article>
+      <article class="segment-card" data-reveal data-reveal-delay="80">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></div>
+        <h3>Tecnologia</h3>
+        <p>Desenvolvedores, designers, profissionais de TI e empresas digitais.</p>
+      </article>
+      <article class="segment-card" data-reveal data-reveal-delay="160">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
+        <h3>Marketing e comunicação</h3>
+        <p>Agências, produtoras, publicitários e profissionais de comunicação.</p>
+      </article>
+      <article class="segment-card" data-reveal data-reveal-delay="240">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+        <h3>Profissionais liberais e PJ</h3>
+        <p>Engenheiros, arquitetos, advogados, consultores e corretores.</p>
+      </article>
+      <article class="segment-card" data-reveal data-reveal-delay="320">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a1.5 1.5 0 0 0 1.5 1.2h8.8a1.5 1.5 0 0 0 1.5-1.1L21 8H6"/></svg></div>
+        <h3>Comércio e serviços</h3>
+        <p>Lojas físicas, e-commerce e empresas de prestação de serviços em geral.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMO FUNCIONA (ABAS) ===== -->
+<section class="section section-alt" id="como-funciona">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Em cada momento da sua empresa</span>
+      <h2>Uma contabilidade que te acompanha do começo ao crescimento</h2>
+      <p>Da escolha do melhor regime tributário até a rotina do dia a dia, cuidamos de tudo para você empreender com segurança. Veja como é simples começar.</p>
+    </div>
+
+    <div class="tabs" data-reveal>
+      <div class="tab-list" role="tablist" aria-label="Como começar com a SAD">
+        <button class="tab-btn active" role="tab" id="tab-abrir" aria-controls="panel-abrir" aria-selected="true" data-tab="abrir">Abrir empresa grátis</button>
+        <button class="tab-btn" role="tab" id="tab-trocar" aria-controls="panel-trocar" aria-selected="false" tabindex="-1" data-tab="trocar">Trocar de contador</button>
+        <button class="tab-btn" role="tab" id="tab-mei" aria-controls="panel-mei" aria-selected="false" tabindex="-1" data-tab="mei">Migrar de MEI para ME</button>
+      </div>
+
+      <div class="tab-panel active" role="tabpanel" id="panel-abrir" aria-labelledby="tab-abrir">
+        <div class="steps">
+          <div class="step-card"><span class="process-num">1</span><h3>Consultoria especializada</h3><p>Ajudamos você a escolher o melhor regime tributário, a atividade (CNAE) e a estrutura ideal para a sua empresa.</p></div>
+          <div class="step-card"><span class="process-num">2</span><h3>Abertura grátis da empresa</h3><p>Assumimos toda a burocracia junto aos órgãos Federal, Estadual e Municipal — sem cobrar honorários pela abertura — e te atualizamos a cada etapa.</p></div>
+          <div class="step-card"><span class="process-num">3</span><h3>CNPJ pronto!</h3><p>Com a empresa aberta, assumimos a contabilidade e você foca no que importa: fazer o negócio crescer.</p></div>
+        </div>
+        <div class="tabs-cta"><a href="https://wa.me/551124023899?text=Ol%C3%A1%21%20Quero%20abrir%20meu%20CNPJ%20gr%C3%A1tis%20com%20a%20SAD." target="_blank" rel="noopener" class="btn btn-primary btn-lg"><svg width="18" height="18"><use href="#i-wa"/></svg> Abrir meu CNPJ grátis</a></div>
+        <p class="cta-note center">* Abertura sem cobrança de honorários mediante contratação da contabilidade mensal, com prazo mínimo de contrato. Taxas de órgãos públicos podem ser cobradas conforme o município. Consulte as condições pelo WhatsApp.</p>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-trocar" aria-labelledby="tab-trocar" hidden>
+        <div class="steps">
+          <div class="step-card"><span class="process-num">1</span><h3>Diagnóstico gratuito</h3><p>Analisamos a situação atual da sua empresa, impostos pagos e possíveis pendências.</p></div>
+          <div class="step-card"><span class="process-num">2</span><h3>Transição sem dor de cabeça</h3><p>Cuidamos do contato com o contador anterior e da migração de dados e documentos com segurança.</p></div>
+          <div class="step-card"><span class="process-num">3</span><h3>Rotina em dia</h3><p>A partir daí, a SAD assume a contabilidade, com prazos cumpridos e atendimento próximo.</p></div>
+        </div>
+        <div class="tabs-cta"><a href="https://wa.me/551124023899?text=Ol%C3%A1%21%20Tenho%20empresa%20e%20quero%20trocar%20de%20contador." target="_blank" rel="noopener" class="btn btn-primary btn-lg"><svg width="18" height="18"><use href="#i-wa"/></svg> Quero trocar de contador</a></div>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-mei" aria-labelledby="tab-mei" hidden>
+        <div class="steps">
+          <div class="step-card"><span class="process-num">1</span><h3>Análise do seu MEI</h3><p>Verificamos o faturamento, a atividade e o momento certo de fazer a mudança sem riscos.</p></div>
+          <div class="step-card"><span class="process-num">2</span><h3>Desenquadramento e transformação</h3><p>Fazemos todo o processo para transformar seu MEI em Microempresa (ME), no regime mais vantajoso.</p></div>
+          <div class="step-card"><span class="process-num">3</span><h3>Pronto para crescer</h3><p>Sua empresa pode faturar mais, contratar funcionários e ter sócios, com a contabilidade em dia.</p></div>
+        </div>
+        <div class="tabs-cta"><a href="https://wa.me/551124023899?text=Ol%C3%A1%21%20Quero%20migrar%20meu%20MEI%20para%20ME." target="_blank" rel="noopener" class="btn btn-primary btn-lg"><svg width="18" height="18"><use href="#i-wa"/></svg> Quero migrar para ME</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFÍCIOS (IMAGEM + TEXTO) ===== -->
+<section class="section" id="beneficios">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Vantagens para você</span>
+      <h2>Benefícios de ter a SAD ao seu lado</h2>
+    </div>
+
+    <div class="feature-row" data-reveal>
+      <div class="feature-media"><img src="assets/img/atendimento-consultoria.jpg" alt="Duas profissionais conversando em uma reunião de atendimento" loading="lazy" width="1200" height="850"></div>
+      <div class="feature-copy">
+        <span class="feature-kicker">Atendimento</span>
+        <h3>Atendimento rápido pelo WhatsApp</h3>
+        <p>Nada de esperar dias por uma resposta. Fale diretamente com o nosso time pelo WhatsApp, e-mail ou telefone e resolva suas dúvidas com quem entende do seu negócio.</p>
+        <a class="link-arrow" href="https://wa.me/551124023899" target="_blank" rel="noopener">Chamar no WhatsApp <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="feature-row reverse" data-reveal>
+      <div class="feature-media"><img src="assets/img/reducao-impostos.jpg" alt="Pessoa analisando documentos fiscais com calculadora" loading="lazy" width="1200" height="850"></div>
+      <div class="feature-copy">
+        <span class="feature-kicker">Economia</span>
+        <h3>Redução legal de impostos</h3>
+        <p>Analisamos o enquadramento da sua empresa e aplicamos o planejamento tributário adequado, como o Fator R do Simples Nacional, para você pagar menos impostos de forma legal e segura.</p>
+        <a class="link-arrow" href="#contato">Quero pagar menos impostos <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="feature-row" data-reveal>
+      <div class="feature-media"><img src="assets/img/atendimento-online.jpg" alt="Pessoas trabalhando em notebooks" loading="lazy" width="1200" height="850"></div>
+      <div class="feature-copy">
+        <span class="feature-kicker">Onde você estiver</span>
+        <h3>Sua contabilidade sempre com você</h3>
+        <p>Empreender é ter liberdade. Com processos digitais, você envia documentos, recebe guias e acompanha sua empresa de qualquer lugar, com praticidade e tranquilidade.</p>
+        <a class="link-arrow" href="#contato">Falar com um especialista <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GESTÃO EM UM SÓ LUGAR ===== -->
+<section class="section section-alt" id="gestao">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Controle total</span>
+      <h2>Tudo da sua empresa <span class="text-gradient">em um só lugar</span></h2>
+      <p>Informação clara para você decidir com segurança, sem surpresas no fim do mês.</p>
+    </div>
+
+    <div class="mgmt-grid">
+      <article class="mgmt-card" data-reveal>
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div><h3>Transparência fiscal</h3><p>Entenda cada imposto com base na atividade e no faturamento da sua empresa.</p></div>
+      </article>
+      <article class="mgmt-card" data-reveal data-reveal-delay="60">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></div>
+        <div><h3>Conciliação bancária</h3><p>Movimentações organizadas, facilitando a gestão e a declaração do Imposto de Renda.</p></div>
+      </article>
+      <article class="mgmt-card" data-reveal data-reveal-delay="120">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4v16h16"/><path d="M8 15l3-4 3 3 5-6"/></svg></div>
+        <div><h3>Previsão de impostos</h3><p>Saiba com antecedência quanto vai pagar e planeje melhor o seu caixa.</p></div>
+      </article>
+      <article class="mgmt-card" data-reveal>
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h7M9 17h5"/></svg></div>
+        <div><h3>Notas fiscais</h3><p>Orientação e suporte para emitir, importar e cancelar notas sem erros.</p></div>
+      </article>
+      <article class="mgmt-card" data-reveal data-reveal-delay="60">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.9-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3 15.1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></div>
+        <div><h3>Gestão completa</h3><p>Contábil, fiscal e departamento pessoal integrados, com um só parceiro.</p></div>
+      </article>
+      <article class="mgmt-card" data-reveal data-reveal-delay="120">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></div>
+        <div><h3>Alertas de prazos</h3><p>Avisamos você antes dos vencimentos para manter tudo em dia e evitar multas.</p></div>
       </article>
     </div>
   </div>
@@ -269,8 +473,57 @@
   </div>
 </section>
 
+<!-- ===== FERRAMENTAS GRATUITAS ===== -->
+<section class="section section-alt" id="ferramentas">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Ferramentas gratuitas</span>
+      <h2>Calculadoras e consultas para <span class="text-gradient">decidir melhor</span></h2>
+      <p>Simule impostos, compare regimes e resolva tarefas do dia a dia em poucos cliques — sem cadastro.</p>
+    </div>
+    <div class="tools-grid">
+      <a class="tool-link" href="ferramentas/calculadora-clt-pj.html" data-reveal data-reveal-delay="0">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M14 10h2M8 14h2M14 14h2M8 18h2M14 18h2"/></svg></div>
+        <h3>Calculadora CLT x PJ</h3>
+        <p>Compare salário CLT com faturamento PJ, incluindo 13º, férias, FGTS, impostos e benefícios.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="ferramentas/calculadora-fator-r.html" data-reveal data-reveal-delay="70">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 20 4"/><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/></svg></div>
+        <h3>Calculadora Fator R</h3>
+        <p>Descubra se sua empresa pode sair do Anexo V para o Anexo III do Simples e pagar menos imposto.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="ferramentas/calculadora-reforma-tributaria.html" data-reveal data-reveal-delay="140">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 7h18M6 7l-3 7a3 3 0 0 0 6 0L6 7ZM18 7l-3 7a3 3 0 0 0 6 0l-3-7ZM8 21h8"/></svg></div>
+        <h3>Calculadora da Reforma Tributária</h3>
+        <p>Simule como a troca de PIS, Cofins, ICMS e ISS por CBS e IBS pode impactar o seu negócio.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="ferramentas/consulta-cnae.html" data-reveal data-reveal-delay="210">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+        <h3>Consulta de CNAE</h3>
+        <p>Busque entre todos os 1.332 códigos oficiais do IBGE por atividade, palavra-chave ou número.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="ferramentas/gerador-de-invoice.html" data-reveal data-reveal-delay="280">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h7M9 17h5"/></svg></div>
+        <h3>Gerador de Invoice</h3>
+        <p>Crie faturas para clientes no exterior em dólar, euro ou libra e baixe em PDF gratuitamente.</p>
+        <span class="link-arrow">Usar grátis <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="tool-link" href="ferramentas/index.html" data-reveal data-reveal-delay="350">
+        <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>Ver todas as ferramentas</h3>
+        <p>Conheça a central de ferramentas da SAD e salve nos seus favoritos.</p>
+        <span class="link-arrow">Acessar <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== QUEM SOMOS ===== -->
-<section class="section section-alt" id="sobre">
+<section class="section" id="sobre">
   <div class="container about-grid">
     <div class="about-copy" data-reveal>
       <span class="section-tag">Quem somos</span>
@@ -339,24 +592,131 @@
   </div>
 </section>
 
+<!-- ===== EQUIPE ===== -->
+<section class="section section-alt" id="equipe">
+  <div class="container feature-row team-row" data-reveal>
+    <div class="feature-media"><img src="assets/img/equipe.jpg" alt="Equipe comemorando um resultado no escritório" loading="lazy" width="1200" height="850"></div>
+    <div class="feature-copy">
+      <span class="section-tag">Nosso time</span>
+      <h2>Por trás de cada solução, uma equipe comprometida com o seu sucesso</h2>
+      <p>Você é atendido por especialistas que transformam processos burocráticos em soluções práticas. Eliminamos obstáculos contábeis, ajudamos você a economizar e criamos caminhos mais simples para o seu negócio crescer.</p>
+      <ul class="trust-list">
+        <li><svg width="18" height="18"><use href="#i-check"/></svg> Escritório registrado no Conselho Regional de Contabilidade</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg> Atendimento multicanal: WhatsApp, telefone, e-mail e Instagram</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg> Mais de 30 anos de experiência no mercado</li>
+      </ul>
+      <a href="#contato" class="btn btn-primary btn-lg">Fale com um especialista</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<!-- IMPORTANTE: substitua os textos e nomes abaixo por depoimentos REAIS de clientes da SAD (com autorização). -->
+<section class="section" id="depoimentos">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Depoimentos</span>
+      <h2>O que nossos clientes dizem</h2>
+      <p>Empresas de diversos segmentos confiam na SAD para cuidar da sua contabilidade de forma simples, eficiente e humanizada.</p>
+    </div>
+
+    <div class="testimonials">
+      <figure class="testimonial" data-reveal>
+        <div class="stars" aria-label="5 de 5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“Espaço para o depoimento de um cliente real da SAD — conte como a contabilidade ficou mais simples no dia a dia.”</blockquote>
+        <figcaption><span class="avatar">NC</span><span><strong>Nome do Cliente</strong><small>Empresa · Segmento</small></span></figcaption>
+      </figure>
+      <figure class="testimonial" data-reveal data-reveal-delay="100">
+        <div class="stars" aria-label="5 de 5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“Espaço para o depoimento de um cliente real da SAD — destaque o atendimento e a agilidade do time.”</blockquote>
+        <figcaption><span class="avatar">NC</span><span><strong>Nome do Cliente</strong><small>Empresa · Segmento</small></span></figcaption>
+      </figure>
+      <figure class="testimonial" data-reveal data-reveal-delay="200">
+        <div class="stars" aria-label="5 de 5 estrelas"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“Espaço para o depoimento de um cliente real da SAD — fale sobre economia de impostos ou tranquilidade com os prazos.”</blockquote>
+        <figcaption><span class="avatar">NC</span><span><strong>Nome do Cliente</strong><small>Empresa · Segmento</small></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CTA BANNER ===== -->
 <section class="cta-banner">
   <div class="container cta-inner" data-reveal>
-    <h2>Pronto para simplificar a contabilidade da sua empresa?</h2>
-    <p>Fale agora com nosso time e receba um diagnóstico gratuito.</p>
-    <a href="https://wa.me/551124023899" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
-      Entre em contato conosco
-    </a>
+    <span class="cta-badge">Abertura de empresa sem custo*</span>
+    <h2>Abra seu CNPJ <span class="text-gradient">grátis</span> e comece com a contabilidade certa</h2>
+    <p>A SAD cuida de toda a burocracia da abertura sem cobrar nada por isso — e depois assume a contabilidade para você focar em crescer.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/551124023899?text=Ol%C3%A1%21%20Quero%20abrir%20meu%20CNPJ%20gr%C3%A1tis%20com%20a%20SAD." target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-glow">
+        <svg width="18" height="18"><use href="#i-wa"/></svg>
+        Abrir meu CNPJ grátis
+      </a>
+      <a href="#como-funciona" class="btn btn-ghost btn-lg" data-open-tab="trocar">Já tenho empresa</a>
+    </div>
+    <p class="cta-note center">* Abertura sem cobrança de honorários mediante contratação da contabilidade mensal, com prazo mínimo de contrato. Taxas de órgãos públicos podem ser cobradas conforme o município. Consulte as condições pelo WhatsApp.</p>
   </div>
 </section>
 
 <!-- ===== CONTATO ===== -->
 <section class="section" id="contato">
   <div class="container">
-    <div class="section-head" data-reveal>
-      <span class="section-tag">Fale conosco</span>
-      <h2>Entre em contato</h2>
+    <div class="lead-wrap" data-reveal>
+      <div class="lead-media">
+        <img src="assets/img/especialista.jpg" alt="Especialista sorrindo em ambiente de escritório" loading="lazy" width="800" height="1000">
+        <div class="lead-media-card">
+          <strong>Resposta rápida</strong>
+          <span>Nosso time retorna o seu contato o quanto antes.</span>
+        </div>
+      </div>
+
+      <form class="lead-form" id="leadForm" novalidate>
+        <span class="section-tag">Fale com um especialista</span>
+        <h2>Estamos quase lá!</h2>
+        <p>Preencha o formulário e descubra como pagar menos impostos e manter sua empresa regularizada. Sua mensagem será enviada pelo WhatsApp.</p>
+
+        <div class="form-grid">
+          <label class="field full"><span>Nome*</span><input type="text" name="nome" autocomplete="name" required></label>
+          <label class="field"><span>E-mail*</span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="field"><span>Telefone*</span><input type="tel" name="telefone" autocomplete="tel" placeholder="(11) 90000-0000" required></label>
+          <label class="field"><span>Cidade*</span><input type="text" name="cidade" autocomplete="address-level2" required></label>
+          <label class="field"><span>Estado*</span>
+            <select name="estado" required>
+              <option value="">Selecione</option>
+              <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option selected>SP</option><option>SE</option><option>TO</option>
+            </select>
+          </label>
+          <label class="field"><span>Qual serviço deseja?*</span>
+            <select name="servico" required>
+              <option value="">Selecione</option>
+              <option>Abrir empresa (CNPJ grátis)</option>
+              <option>Trocar de contador</option>
+              <option>Migrar de MEI para ME</option>
+              <option>Departamento Pessoal</option>
+              <option>Regularizar empresa</option>
+              <option>Outro assunto</option>
+            </select>
+          </label>
+          <label class="field"><span>Tipo de negócio*</span>
+            <select name="negocio" required>
+              <option value="">Selecione</option>
+              <option>Prestação de serviços</option>
+              <option>Comércio</option>
+              <option>Saúde</option>
+              <option>Tecnologia</option>
+              <option>Profissional liberal / PJ</option>
+              <option>Outro</option>
+            </select>
+          </label>
+          <label class="field full"><span>Mensagem</span><textarea name="mensagem" rows="3" placeholder="Conte um pouco sobre a sua empresa (opcional)"></textarea></label>
+        </div>
+
+        <p class="form-error" id="formError" role="alert" hidden>Preencha os campos obrigatórios (*) para continuar.</p>
+        <button type="submit" class="btn btn-primary btn-lg form-submit"><svg width="18" height="18"><use href="#i-wa"/></svg> Falar com especialista</button>
+      </form>
+    </div>
+
+    <div class="section-head contact-head" data-reveal>
+      <h3>Prefere falar direto?</h3>
       <p>Estamos disponíveis pelos canais abaixo — respondemos rápido.</p>
     </div>
 
@@ -381,25 +741,120 @@
   </div>
 </section>
 
+<!-- ===== PERGUNTAS FREQUENTES ===== -->
+<section class="section section-alt" id="duvidas">
+  <div class="container faq-wrap">
+    <div class="section-head left" data-reveal>
+      <span class="section-tag">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+      <p>Separamos as dúvidas mais comuns de quem está abrindo uma empresa ou procurando um novo contador.</p>
+      <a class="btn btn-ghost btn-lg" href="https://wa.me/551124023899" target="_blank" rel="noopener"><svg width="18" height="18"><use href="#i-wa"/></svg> Ainda tem dúvidas? Fale conosco</a>
+    </div>
+    <div class="faq-list" data-reveal data-reveal-delay="100">
+      <details class="faq-item" open>
+        <summary>Como funciona a contabilidade da SAD?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Nossos especialistas cuidam de toda a contabilidade da sua empresa: cálculo de impostos, folha de pagamento, declarações e obrigações fiscais. Você acompanha tudo de perto e tem suporte humanizado sempre que precisar.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>A contabilidade digital é segura?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Sim. Somos um escritório registrado no Conselho Regional de Contabilidade (CRC SP-036030/O-9) e tratamos seus dados e documentos com total sigilo e responsabilidade.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>A SAD tem contadores de verdade?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Sim! Nosso time é formado por profissionais contábeis experientes, que acompanham de perto a sua empresa e estão prontos para tirar dúvidas sempre que precisar.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Quais serviços posso contratar?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Abertura de empresa, troca de contador, transformação de MEI em ME, além da rotina completa dos departamentos Pessoal, Contábil, Fiscal e de Legalização.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>A abertura do CNPJ é mesmo grátis?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Sim. A SAD não cobra honorários para abrir a sua empresa: você começa pagando apenas a primeira mensalidade da contabilidade, com um prazo mínimo de contrato. As taxas dos órgãos públicos (como Junta Comercial e prefeitura), quando existirem no seu município, são informadas antes de começar. Explicamos todas as condições pelo WhatsApp.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>É preciso contador para abrir uma empresa?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Sim. Com exceção do MEI, toda empresa precisa de um contador responsável, vinculado à Receita Federal, para liberar o CNPJ e manter as obrigações fiscais em dia.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Posso trocar de contador a qualquer momento?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Sim, e de forma simples. Nossa equipe cuida da transição com o contador anterior e da migração de dados e documentos, garantindo segurança e nenhuma dor de cabeça.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Quando devo migrar de MEI para ME?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Quando o faturamento se aproxima do limite do MEI, quando você precisa contratar mais funcionários, ter sócios ou exercer uma atividade não permitida ao MEI. Analisamos o seu caso e indicamos o melhor momento.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Quais empresas a SAD atende?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Micro, pequenas e médias empresas de serviços e comércio, de diversos segmentos, como saúde, tecnologia, marketing, profissionais liberais e comércio em geral.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Como contratar a SAD?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Basta preencher o formulário acima ou chamar no WhatsApp. Vamos entender a sua empresa e indicar tudo o que é necessário para manter seu CNPJ regularizado.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img class="brand-logo footer-logo" src="assets/logo-sad.png" alt="SAD Assessoria Empresarial">
-      <div>
-        <strong>Assessoria Empresarial</strong>
-        <p>Sad Escritório Contábil Ltda. — CRC SP-036030/O-9</p>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <img class="brand-logo footer-logo" src="assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+          <div>
+            <strong>Assessoria Empresarial</strong>
+            <p>Contabilidade</p>
+          </div>
+        </div>
+        <p class="footer-about">Contabilidade orientada por dados para empresas que querem crescer. Mais praticidade, transparência e confiança para quem empreende.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener" aria-label="Instagram da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="WhatsApp da SAD"><svg width="18" height="18"><use href="#i-wa"/></svg></a>
+          <a href="mailto:sadassessoria@gmail.com" aria-label="E-mail da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Institucional">
+        <h4>A SAD</h4>
+        <a href="#sobre">Quem Somos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#equipe">Nosso time</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#duvidas">Perguntas frequentes</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Serviços">
+        <h4>Serviços</h4>
+        <a href="#como-funciona" data-open-tab="abrir">Abrir empresa grátis</a>
+        <a href="#como-funciona" data-open-tab="trocar">Trocar de contador</a>
+        <a href="#como-funciona" data-open-tab="mei">Migrar de MEI para ME</a>
+        <a href="#servicos">Áreas de atuação</a>
+        <a href="#segmentos">Segmentos atendidos</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="ferramentas/calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="ferramentas/calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="ferramentas/calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="ferramentas/consulta-cnae.html">Consulta de CNAE</a>
+        <a href="ferramentas/gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/551124023899" target="_blank" rel="noopener">(11) 2402-3899</a>
+        <a href="https://wa.me/551134355150" target="_blank" rel="noopener">(11) 3435-5150</a>
+        <a href="mailto:sadassessoria@gmail.com">sadassessoria@gmail.com</a>
+        <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener">@sadassessoria</a>
       </div>
     </div>
 
-    <nav class="footer-links">
-      <a href="#servicos">Áreas de Atuação</a>
-      <a href="#sobre">Quem Somos</a>
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#contato">Contato</a>
-    </nav>
-
-    <p class="footer-copy">&copy; <span id="year"></span> SAD Assessoria Empresarial. Todos os direitos reservados.</p>
+    <div class="footer-bottom">
+      <p>Sad Escritório Contábil Ltda. — CRC SP-036030/O-9</p>
+      <p class="footer-copy">&copy; <span id="year"></span> SAD Assessoria Empresarial. Todos os direitos reservados.</p>
+    </div>
   </div>
 </footer>
 
