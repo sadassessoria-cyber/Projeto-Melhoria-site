@@ -1117,3 +1117,19 @@ img, svg { display: block; max-width: 100%; }
   .header-actions .btn-primary .btn-label { display: none; }
   .header-actions .btn-primary { padding: 10px; }
 }
+
+/* Segmentos PJ (3 cartões) */
+.segments-grid.segments-pj { grid-template-columns: repeat(3, 1fr); }
+.segments-pj .segment-card { display: flex; flex-direction: column; gap: 4px; padding: 30px 26px; }
+.segments-pj .segment-card p { flex: 1; margin-bottom: 14px; }
+@media (max-width: 760px) { .segments-grid.segments-pj { grid-template-columns: 1fr; } }
+
+/* Cabeçalho: evita sobreposição do menu com a marca em telas médias */
+.brand { flex-shrink: 0; }
+.main-nav a { white-space: nowrap; }
+@media (min-width: 1101px) {
+  .site-header .brand-text { display: none; }
+}
+@media (max-width: 1320px) and (min-width: 1101px) {
+  .main-nav { gap: 18px; }
+}
