@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora CLT x PJ | SAD Assessoria Empresarial</title>
+<meta name="description" content="Compare salário CLT e PJ com 13º, férias, FGTS, INSS, IR e Simples Nacional. Calculadora gratuita da SAD Assessoria.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- Ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="rgba(243,211,138,0.14)"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#f3d38a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8l3-6Z"/></symbol>
+</svg>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="brand">
+      <img class="brand-logo" src="../assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+      <span class="brand-text">
+        <strong>Assessoria Empresarial</strong>
+        <small>Contabilidade</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html#servicos">Serviços</a>
+      <a href="../index.html#segmentos">Segmentos</a>
+      <a href="../index.html#como-funciona">Como funciona</a>
+      <a href="index.html" class="active" aria-current="page">Ferramentas</a>
+      <a href="../index.html#sobre">Quem Somos</a>
+      <a href="../index.html#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="../index.html#contato">Área Restrita</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/551124023899?text=Ol%C3%A1%21%20Quero%20abrir%20meu%20CNPJ%20gr%C3%A1tis%20com%20a%20SAD." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+        <span class="btn-label">Abrir CNPJ grátis</span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ===== TOPO DA PÁGINA ===== -->
+<section class="page-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Você está em"><a href="../index.html">Início</a> <span aria-hidden="true">/</span> <a href="index.html">Ferramentas</a> <span aria-hidden="true">/</span> <span>CLT x PJ</span></nav>
+    <h1>Calculadora Salário <span class="text-gradient">CLT x PJ</span></h1>
+    <p class="hero-lead">Descubra quanto você vai receber em cada modelo e entenda qual opção compensa mais para você — com cálculo completo de impostos, benefícios e encargos.</p>
+  </div>
+</section>
+
+<section class="tool-section">
+  <div class="container">
+    <form class="tool-card" id="cltForm" novalidate>
+      <h2>Preencha com seus dados para calcular</h2>
+      <p>Informe seu salário CLT e, se já tiver uma proposta, quanto ganharia como PJ. Não pedimos cadastro.</p>
+
+      <div class="tool-grid">
+        <label class="field"><span>Salário CLT (bruto mensal)*</span><input type="text" name="salario" data-money placeholder="R$ 0,00" required></label>
+        <label class="field"><span>Benefícios mensais</span><input type="text" name="beneficios" data-money placeholder="R$ 0,00"><small>Vale-refeição, alimentação, plano de saúde etc.</small></label>
+        <label class="field"><span>Dependentes para o IR</span><input type="number" name="dependentes" min="0" max="10" value="0"></label>
+        <label class="field"><span>Quanto ganharia como PJ (opcional)</span><input type="text" name="pj" data-money placeholder="R$ 0,00"><small>Valor bruto mensal da proposta.</small></label>
+        <label class="field"><span>Mensalidade da contabilidade</span><input type="text" name="contabilidade" data-money placeholder="R$ 0,00"><small>Opcional — deixe em branco se ainda não sabe.</small></label>
+        <div class="field"><span>Enquadramento no Simples</span>
+          <label class="check-field"><input type="checkbox" name="fatorR" checked> Usar o Fator R (pró-labore de 28%) para pagar pelo Anexo III</label>
+        </div>
+      </div>
+
+      <p class="form-error" id="cltError" role="alert" hidden>Informe o salário CLT para calcular.</p>
+      <div class="tool-actions"><button class="btn btn-primary btn-lg" type="submit">Ver resultado</button></div>
+
+      <div class="result" id="cltResult" hidden aria-live="polite">
+        <div class="result-head"><h3>Seu resultado</h3></div>
+        <div class="verdict" id="cltVerdict"></div>
+        <div class="compare">
+          <div class="compare-col" id="colClt"></div>
+          <div class="compare-col" id="colPj"></div>
+        </div>
+        <p class="disclaimer">Simulação estimada com as tabelas de INSS, IRRF (incluindo a redução da Lei 15.270/2025) e Simples Nacional vigentes em 2026, considerando atividade sujeita ao Fator R e empresa na 1ª faixa de faturamento conforme o valor informado. O resultado não substitui a análise de um contador.</p>
+    <div class="result-cta">
+      <p>Vai virar PJ? A SAD abre o seu CNPJ de graça e cuida para você pagar o mínimo de impostos.</p>
+      <a class="btn btn-primary btn-sm btn-glow" href="https://wa.me/551124023899?text=Ol%C3%A1%21%20Quero%20abrir%20meu%20CNPJ%20gr%C3%A1tis%20com%20a%20SAD." target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-wa"/></svg> Abrir meu CNPJ grátis</a>
+    </div>
+    <p class="cta-note" style="margin:10px 0 0;max-width:none">* Abertura sem cobrança de honorários mediante contratação da contabilidade mensal, com prazo mínimo de contrato. Taxas de órgãos públicos podem ser cobradas conforme o município. Consulte as condições pelo WhatsApp.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="section-tag">Entenda o cálculo</span>
+      <h2>Como calcular o salário PJ?</h2>
+      <p>Em geral, para equilibrar as vantagens, o faturamento PJ precisa ser de 20% a 50% maior que o salário bruto CLT.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card" data-reveal>
+        <h3>No regime CLT, considere</h3>
+        <ul>
+          <li>Salário líquido (descontados INSS e Imposto de Renda);</li>
+          <li>13º salário e férias com o adicional de 1/3;</li>
+          <li>FGTS de 8% sobre o salário bruto, depositado pela empresa;</li>
+          <li>Benefícios como vale-refeição, alimentação e plano de saúde.</li>
+        </ul>
+      </div>
+      <div class="info-card" data-reveal data-reveal-delay="80">
+        <h3>No regime PJ, desconte</h3>
+        <ul>
+          <li>Impostos do Simples Nacional sobre o faturamento (a partir de 6%);</li>
+          <li>INSS de 11% sobre o pró-labore;</li>
+          <li>Imposto de Renda sobre o pró-labore, quando houver;</li>
+          <li>Mensalidade da contabilidade.</li>
+        </ul>
+      </div>
+      <div class="info-card" data-reveal>
+        <h3>Contratação PJ</h3>
+        <ul>
+          <li>Contrato de prestação de serviço, sem vínculo empregatício;</li>
+          <li>Recebe sem descontos na fonte, mas paga os próprios impostos;</li>
+          <li>É preciso abrir uma empresa (CNPJ) e emitir notas fiscais;</li>
+          <li>Rotina mais flexível, conforme o contrato.</li>
+        </ul>
+      </div>
+      <div class="info-card" data-reveal data-reveal-delay="80">
+        <h3>Contratação CLT</h3>
+        <ul>
+          <li>Vínculo empregatício com registro em carteira;</li>
+          <li>Direito a 13º, férias, FGTS, seguro-desemprego e aviso prévio;</li>
+          <li>Descontos de INSS e IR direto na folha;</li>
+          <li>Jornada de trabalho definida em lei.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="duvidas">
+  <div class="container faq-wrap">
+    <div class="section-head left" data-reveal>
+      <span class="section-tag">Dúvidas</span>
+      <h2>Perguntas frequentes — CLT ou PJ</h2>
+    </div>
+    <div class="faq-list" data-reveal>
+      <details class="faq-item" open><summary>Como saber se vale a pena ser PJ?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Vale a pena quando o valor PJ cobre o que você perderia de benefícios CLT (13º, férias, FGTS) e ainda sobra uma diferença. Use a calculadora acima para comparar os dois cenários.</p></div></details>
+      <details class="faq-item"><summary>Quanto de imposto eu pagarei sendo PJ?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>No Simples Nacional, a maioria dos prestadores de serviço paga a partir de 6% do faturamento (Anexo III) quando usa o Fator R, ou a partir de 15,5% (Anexo V) sem ele. Somam-se o INSS e o IR sobre o pró-labore.</p></div></details>
+      <details class="faq-item"><summary>O que é o Fator R?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>É a relação entre a folha de pagamento (incluindo o pró-labore) e o faturamento dos últimos 12 meses. Se for de 28% ou mais, várias atividades pagam pelo Anexo III, com alíquotas bem menores. <a class="link-arrow" href="calculadora-fator-r.html">Calcule seu Fator R →</a></p></div></details>
+      <details class="faq-item"><summary>Como mudar de CLT para PJ?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Você precisa abrir um CNPJ com a atividade (CNAE) correta, escolher o regime tributário e emitir nota fiscal pelos serviços. A SAD abre o seu CNPJ grátis e cuida de todo esse processo para você.</p></div></details>
+      <details class="faq-item"><summary>Posso ser CLT e PJ ao mesmo tempo?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><p>Sim, desde que o contrato CLT não tenha cláusula de exclusividade e as atividades não conflitem. Nesse caso, é importante planejar o pró-labore e os impostos com um contador.</p></div></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <img class="brand-logo footer-logo" src="../assets/logo-sad.png" alt="SAD Assessoria Empresarial">
+          <div>
+            <strong>Assessoria Empresarial</strong>
+            <p>Contabilidade</p>
+          </div>
+        </div>
+        <p class="footer-about">Contabilidade orientada por dados para empresas que querem crescer. Mais praticidade, transparência e confiança para quem empreende.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener" aria-label="Instagram da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="WhatsApp da SAD"><svg width="18" height="18"><use href="#i-wa"/></svg></a>
+          <a href="mailto:sadassessoria@gmail.com" aria-label="E-mail da SAD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Institucional">
+        <h4>A SAD</h4>
+        <a href="../index.html#sobre">Quem Somos</a>
+        <a href="../index.html#diferenciais">Diferenciais</a>
+        <a href="../index.html#equipe">Nosso time</a>
+        <a href="../index.html#depoimentos">Depoimentos</a>
+        <a href="../index.html#duvidas">Perguntas frequentes</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Serviços">
+        <h4>Serviços</h4>
+        <a href="../index.html#como-funciona" data-open-tab="abrir">Abrir empresa grátis</a>
+        <a href="../index.html#como-funciona" data-open-tab="trocar">Trocar de contador</a>
+        <a href="../index.html#como-funciona" data-open-tab="mei">Migrar de MEI para ME</a>
+        <a href="../index.html#servicos">Áreas de atuação</a>
+        <a href="../index.html#segmentos">Segmentos atendidos</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="consulta-cnae.html">Consulta de CNAE</a>
+        <a href="gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Ferramentas">
+        <h4>Ferramentas</h4>
+        <a href="ferramentas/calculadora-clt-pj.html">Calculadora CLT x PJ</a>
+        <a href="ferramentas/calculadora-fator-r.html">Calculadora Fator R</a>
+        <a href="ferramentas/calculadora-reforma-tributaria.html">Reforma Tributária</a>
+        <a href="ferramentas/consulta-cnae.html">Consulta de CNAE</a>
+        <a href="ferramentas/gerador-de-invoice.html">Gerador de Invoice</a>
+      </nav>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/551124023899" target="_blank" rel="noopener">(11) 2402-3899</a>
+        <a href="https://wa.me/551134355150" target="_blank" rel="noopener">(11) 3435-5150</a>
+        <a href="mailto:sadassessoria@gmail.com">sadassessoria@gmail.com</a>
+        <a href="https://instagram.com/sadassessoria" target="_blank" rel="noopener">@sadassessoria</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Sad Escritório Contábil Ltda. — CRC SP-036030/O-9</p>
+      <p class="footer-copy">&copy; <span id="year"></span> SAD Assessoria Empresarial. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/551124023899" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.14L2 22l5.1-1.53a9.87 9.87 0 0 0 4.94 1.32h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.82-4.2-4.97-4.4-.14-.19-1.2-1.59-1.2-3.03 0-1.44.75-2.15 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.63.77 1.91.91.29.15.48.22.55.34.07.13.07.7-.17 1.38Z"/></svg>
+</a>
+
+<script src="../js/main.js"></script>
+<script src="../js/tools/impostos.js"></script>
+<script src="../js/tools/clt-pj.js"></script>
+</body>
+</html>

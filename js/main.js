@@ -92,6 +92,177 @@
     counters.forEach(animateCounter);
   }
 
+  /* ---------- Tabs (Como funciona) ---------- */
+  var tabBtns = Array.prototype.slice.call(document.querySelectorAll(".tab-btn"));
+  function activateTab(name, focus) {
+    tabBtns.forEach(function (btn) {
+      var isActive = btn.getAttribute("data-tab") === name;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+      btn.setAttribute("tabindex", isActive ? "0" : "-1");
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      panel.hidden = !isActive;
+      panel.classList.toggle("active", isActive);
+      if (isActive && focus) btn.focus();
+    });
+  }
+  tabBtns.forEach(function (btn, i) {
+    btn.addEventListener("click", function () { activateTab(btn.getAttribute("data-tab")); });
+    btn.addEventListener("keydown", function (e) {
+      var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!dir) return;
+      e.preventDefault();
+      var next = tabBtns[(i + dir + tabBtns.length) % tabBtns.length];
+      activateTab(next.getAttribute("data-tab"), true);
+    });
+  });
+  document.querySelectorAll("[data-open-tab]").forEach(function (link) {
+    link.addEventListener("click", function () { activateTab(link.getAttribute("data-open-tab")); });
+  });
+
+  /* ---------- Lead form -> WhatsApp ---------- */
+  var leadForm = document.getElementById("leadForm");
+  if (leadForm) {
+    var formError = document.getElementById("formError");
+    leadForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var valid = true;
+      leadForm.querySelectorAll("[required]").forEach(function (field) {
+        var ok = field.value.trim() !== "" && (field.type !== "email" || /\S+@\S+\.\S+/.test(field.value));
+        field.closest(".field").classList.toggle("invalid", !ok);
+        if (!ok) valid = false;
+      });
+      formError.hidden = valid;
+      if (!valid) return;
+
+      var f = leadForm.elements;
+      var lines = [
+        "Olá! Vim pelo site e gostaria de falar com um especialista.",
+        "",
+        "*Nome:* " + f.nome.value.trim(),
+        "*E-mail:* " + f.email.value.trim(),
+        "*Telefone:* " + f.telefone.value.trim(),
+        "*Cidade/UF:* " + f.cidade.value.trim() + " - " + f.estado.value,
+        "*Serviço:* " + f.servico.value,
+        "*Tipo de negócio:* " + f.negocio.value
+      ];
+      if (f.mensagem.value.trim()) lines.push("*Mensagem:* " + f.mensagem.value.trim());
+      window.open("https://wa.me/551124023899?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
+    });
+  }
+
+  /* ---------- Avaliações do Google (conteúdo em js/avaliacoes.js) ---------- */
+  var reviewsSection = document.getElementById("depoimentos");
+  var reviewsData = window.SAD_AVALIACOES || {};
+  var reviews = (reviewsData.avaliacoes || []).filter(function (r) { return r.texto; });
+
+  // Sem avaliações cadastradas: esconde também os links para a seção
+  if (reviewsSection && !reviews.length) {
+    document.querySelectorAll('a[href="#depoimentos"]').forEach(function (a) { a.style.display = "none"; });
+  }
+
+  if (reviewsSection && reviews.length) {
+    if (reviewsData.nota) {
+      document.getElementById("reviewsRating").textContent = Number(reviewsData.nota).toFixed(1).replace(".", ",");
+      document.getElementById("reviewsStars").style.setProperty("--rating", reviewsData.nota);
+    }
+    if (reviewsData.total) {
+      document.getElementById("reviewsCount").textContent = reviewsData.total + " avaliações no Google";
+    }
+    if (reviewsData.perfilGoogle) {
+      var reviewsLink = document.getElementById("reviewsLink");
+      reviewsLink.href = reviewsData.perfilGoogle;
+      reviewsLink.hidden = false;
+    }
+
+    var track = document.getElementById("reviewsTrack");
+    reviews.forEach(function (review) {
+      var name = review.nome || "Cliente Google";
+
+      var card = document.createElement("article");
+      card.className = "review-card";
+
+      var text = document.createElement("p");
+      text.className = "review-text";
+      text.textContent = "\u201C" + review.texto.trim() + "\u201D";
+      card.appendChild(text);
+
+      var more = document.createElement("button");
+      more.className = "review-more";
+      more.type = "button";
+      more.textContent = "Ler mais";
+      more.hidden = true;
+      more.addEventListener("click", function () {
+        var expanded = card.classList.toggle("expanded");
+        more.textContent = expanded ? "Ler menos" : "Ler mais";
+      });
+      card.appendChild(more);
+
+      var footer = document.createElement("div");
+      footer.className = "review-author";
+
+      var avatar;
+      if (review.foto) {
+        avatar = document.createElement("img");
+        avatar.src = review.foto;
+        avatar.alt = "";
+        avatar.loading = "lazy";
+        avatar.referrerPolicy = "no-referrer";
+      } else {
+        avatar = document.createElement("span");
+        avatar.textContent = name.charAt(0).toUpperCase();
+      }
+      avatar.className = "review-avatar";
+      footer.appendChild(avatar);
+
+      var info = document.createElement("div");
+      var nameEl = document.createElement("strong");
+      nameEl.textContent = name;
+      info.appendChild(nameEl);
+      var meta = document.createElement("div");
+      meta.className = "review-meta";
+      var stars = document.createElement("span");
+      stars.className = "g-stars g-stars-sm";
+      stars.style.setProperty("--rating", review.estrelas || 5);
+      stars.setAttribute("aria-label", (review.estrelas || 5) + " de 5 estrelas");
+      meta.appendChild(stars);
+      if (review.quando) {
+        var when = document.createElement("span");
+        when.textContent = review.quando;
+        meta.appendChild(when);
+      }
+      info.appendChild(meta);
+      footer.appendChild(info);
+      card.appendChild(footer);
+
+      track.appendChild(card);
+    });
+
+    reviewsSection.hidden = false;
+
+    // "Ler mais" só aparece quando o texto foi cortado
+    track.querySelectorAll(".review-card").forEach(function (card) {
+      var text = card.querySelector(".review-text");
+      if (text.scrollHeight > text.clientHeight + 2) card.querySelector(".review-more").hidden = false;
+    });
+
+    var prev = document.getElementById("reviewsPrev");
+    var next = document.getElementById("reviewsNext");
+    function step() {
+      var card = track.querySelector(".review-card");
+      return card ? card.offsetWidth + 20 : track.clientWidth;
+    }
+    function updateArrows() {
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    }
+    prev.addEventListener("click", function () { track.scrollBy({ left: -step() }); });
+    next.addEventListener("click", function () { track.scrollBy({ left: step() }); });
+    track.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    updateArrows();
+  }
+
   /* ---------- Hero particle network ---------- */
   var canvas = document.getElementById("networkCanvas");
   if (canvas && !prefersReducedMotion) {
