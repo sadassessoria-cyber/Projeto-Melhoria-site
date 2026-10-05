@@ -36,7 +36,7 @@
     var row = document.createElement("div");
     row.className = "item-row";
     row.innerHTML =
-      '<label class="field"><span>Descrição</span><input type="text" data-k="desc" placeholder="Software development services — May"></label>' +
+      '<label class="field"><span>Descrição</span><input type="text" data-k="desc" placeholder="Software development services - May"></label>' +
       '<label class="field"><span>Qtd.</span><input type="text" data-k="qtd" inputmode="decimal" value="1"></label>' +
       '<label class="field"><span>Valor unit.</span><input type="text" data-k="valor" inputmode="decimal" placeholder="0.00"></label>' +
       '<button type="button" class="icon-btn" aria-label="Remover item">×</button>';
@@ -73,7 +73,7 @@
   }
 
   function formatarData(iso, idioma) {
-    if (!iso) return "—";
+    if (!iso) return "-";
     var p = iso.split("-");
     return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(LOCALE[idioma], { year: "numeric", month: "short", day: "2-digit" });
   }
@@ -92,23 +92,23 @@
     var total = Math.max(0, subtotal - desconto);
 
     function bloco(nome, doc, endereco, cidade, pais, email) {
-      return "<p><strong>" + (esc(nome) || "—") + "</strong></p>" +
+      return "<p><strong>" + (esc(nome) || "-") + "</strong></p>" +
         (doc ? "<p>" + t.taxid + ": " + esc(doc) + "</p>" : "") +
         (endereco ? "<p>" + esc(endereco) + "</p>" : "") +
-        (cidade || pais ? "<p>" + esc([cidade, pais].filter(Boolean).join(" — ")) + "</p>" : "") +
+        (cidade || pais ? "<p>" + esc([cidade, pais].filter(Boolean).join(" - ")) + "</p>" : "") +
         (email ? "<p>" + esc(email) + "</p>" : "");
     }
 
     paper.innerHTML =
       '<div class="inv-top"><div><h2>' + t.title + "</h2>" + (d.emNome ? "<p>" + esc(d.emNome) + "</p>" : "") + '</div><div class="inv-meta">' +
-      "<p><strong>" + t.no + "</strong> " + (esc(d.numero) || "—") + "</p>" +
+      "<p><strong>" + t.no + "</strong> " + (esc(d.numero) || "-") + "</p>" +
       "<p><strong>" + t.date + ":</strong> " + formatarData(d.emissao, d.idioma) + "</p>" +
       (d.vencimento ? "<p><strong>" + t.due + ":</strong> " + formatarData(d.vencimento, d.idioma) + "</p>" : "") +
       "</div></div>" +
       '<div class="inv-parties"><div><div class="inv-label">' + t.from + "</div>" + bloco(d.emNome, d.emDoc, d.emEndereco, d.emCidade, d.emPais, d.emEmail) + "</div>" +
       '<div><div class="inv-label">' + t.to + "</div>" + bloco(d.clNome, d.clDoc, d.clEndereco, d.clCidade, d.clPais, d.clEmail) + "</div></div>" +
       '<table class="inv-paper-table"><thead><tr><th>' + t.desc + '</th><th class="num">' + t.qty + '</th><th class="num">' + t.unit + '</th><th class="num">' + t.amount + "</th></tr></thead><tbody>" +
-      (linhas || '<tr><td colspan="4" style="color:#8a90ad">—</td></tr>') + "</tbody></table>" +
+      (linhas || '<tr><td colspan="4" style="color:#8a90ad">-</td></tr>') + "</tbody></table>" +
       '<div class="inv-total"><div><p><span>' + t.subtotal + "</span><span>" + fmt.format(subtotal) + "</span></p>" +
       (desconto ? "<p><span>" + t.discount + "</span><span>− " + fmt.format(desconto) + "</span></p>" : "") +
       '<p class="grand"><span>' + t.total + " (" + esc(d.moeda) + ")</span><span>" + fmt.format(total) + "</span></p></div></div>" +
@@ -119,7 +119,7 @@
         (d.local ? "<p><strong>" + t.place + ":</strong> " + esc(d.local) + "</p>" : "") +
         (d.obs ? '<p class="inv-pre">' + esc(d.obs) + "</p>" : "") + "</div>" : "") +
       "</div>" +
-      '<div class="inv-sign">' + t.sign + (d.emNome ? " — " + esc(d.emNome) : "") + "</div>";
+      '<div class="inv-sign">' + t.sign + (d.emNome ? " - " + esc(d.emNome) : "") + "</div>";
     return { dados: d, total: total };
   }
 

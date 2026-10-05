@@ -121,13 +121,13 @@
       var anexo = P.ANEXO[setor];
       var aliqS = I.aliquotaSimples(anexo, rbt12);
       html += '<div class="verdict" style="margin-top:' + (mostrarPresumido ? "26px" : "0") + '"><strong>' + (regime === "naosei" ? "Simples Nacional: " : "") +
-        "o seu DAS continua — cerca de " + moeda(fat * aliqS) + "/mês</strong><span>Pelo Anexo " + anexo + " (alíquota efetiva de " + I.pct(aliqS) + "), a guia única segue existindo. CBS e IBS passam a fazer parte do DAS no lugar de PIS, Cofins, ICMS e ISS.</span></div>";
+        "o seu DAS continua - cerca de " + moeda(fat * aliqS) + "/mês</strong><span>Pelo Anexo " + anexo + " (alíquota efetiva de " + I.pct(aliqS) + "), a guia única segue existindo. CBS e IBS passam a fazer parte do DAS no lugar de PIS, Cofins, ICMS e ISS.</span></div>";
     }
 
     var dicas = [];
     if (clientes === "b2b" || clientes === "ambos") {
       dicas.push(mostrarSimples
-        ? "<li><strong>Vendas para empresas:</strong> seus clientes só poderão abater o crédito do imposto embutido no DAS, que é menor. A partir de 2027 será possível recolher CBS e IBS por fora do Simples para gerar crédito integral — vale simular com um contador se isso torna você mais competitivo.</li>"
+        ? "<li><strong>Vendas para empresas:</strong> seus clientes só poderão abater o crédito do imposto embutido no DAS, que é menor. A partir de 2027 será possível recolher CBS e IBS por fora do Simples para gerar crédito integral - vale simular com um contador se isso torna você mais competitivo.</li>"
         : "<li><strong>Vendas para empresas:</strong> seus clientes poderão abater integralmente a CBS e o IBS que você cobrar. Na prática, o aumento tende a ser neutro para eles, o que facilita o repasse no preço.</li>");
     }
     if (clientes === "b2c" || clientes === "ambos") {

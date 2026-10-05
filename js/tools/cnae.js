@@ -112,7 +112,7 @@
     for (var i = mostrados; i < fim; i++) html += item(DATA[resultados[i].i]);
     list.insertAdjacentHTML("beforeend", html);
     mostrados = fim;
-    meta.textContent = resultados.length.toLocaleString("pt-BR") + (resultados.length === 1 ? " CNAE encontrada" : " CNAEs encontradas") + (resultados.length > mostrados ? " — mostrando " + mostrados : "");
+    meta.textContent = resultados.length.toLocaleString("pt-BR") + (resultados.length === 1 ? " CNAE encontrada" : " CNAEs encontradas") + (resultados.length > mostrados ? " - mostrando " + mostrados : "");
     more.hidden = mostrados >= resultados.length;
   }
 

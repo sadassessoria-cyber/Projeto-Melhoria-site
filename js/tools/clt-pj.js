@@ -99,7 +99,7 @@
     document.getElementById("colPj").innerHTML =
       "<h4>PJ" + (!cltMelhor ? '<span class="tag-best">Melhor opção</span>' : "") + "</h4><div class='rows'>" +
       row(pjInformado > 0 ? "Faturamento mensal" : "Faturamento para empatar", moeda(faturamento)) +
-      row("Simples Nacional — Anexo " + pj.anexo + " (" + I.pct(pj.aliquota) + ")", "− " + moeda(pj.das), "neg") +
+      row("Simples Nacional - Anexo " + pj.anexo + " (" + I.pct(pj.aliquota) + ")", "− " + moeda(pj.das), "neg") +
       row("INSS sobre pró-labore de " + moeda(pj.proLabore), "− " + moeda(pj.inss), "neg") +
       row("IR sobre pró-labore", "− " + moeda(pj.ir), "neg") +
       row("Contabilidade", "− " + moeda(pj.contabilidade), "neg") +

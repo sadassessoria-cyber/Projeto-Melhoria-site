@@ -10,7 +10,7 @@
     ANO: 2026,
     SALARIO_MINIMO: 1621.0,
 
-    /* INSS do empregado — tabela progressiva 2026 (teto R$ 8.475,55) */
+    /* INSS do empregado - tabela progressiva 2026 (teto R$ 8.475,55) */
     INSS_FAIXAS: [
       [1621.0, 0.075],
       [2902.84, 0.09],
@@ -18,7 +18,7 @@
       [8475.55, 0.14]
     ],
 
-    /* IRRF mensal — tabela vigente desde maio/2025 */
+    /* IRRF mensal - tabela vigente desde maio/2025 */
     IRRF_FAIXAS: [
       [2428.8, 0, 0],
       [2826.65, 0.075, 182.16],
@@ -39,7 +39,7 @@
     INSS_PRO_LABORE: 0.11,
     FATOR_R_MINIMO: 0.28,
 
-    /* Simples Nacional — [limite da receita bruta em 12 meses, alíquota nominal, parcela a deduzir] */
+    /* Simples Nacional - [limite da receita bruta em 12 meses, alíquota nominal, parcela a deduzir] */
     SIMPLES: {
       I: [[180000, 0.04, 0], [360000, 0.073, 5940], [720000, 0.095, 13860], [1800000, 0.107, 22500], [3600000, 0.143, 87300], [4800000, 0.19, 378000]],
       II: [[180000, 0.045, 0], [360000, 0.078, 5940], [720000, 0.10, 13860], [1800000, 0.112, 22500], [3600000, 0.147, 85500], [4800000, 0.30, 720000]],
